@@ -1,0 +1,25 @@
+﻿
+@model FashionShop.Models.StatisticalModel
+@if (Model != null)
+            {
+                <div class="statistical">
+                    <table class="table">
+                        <tr>
+                            <td>Today</td>
+                            <td>@Model.Today</td>
+                        </tr>
+                        <tr>
+                            <td>Yesterday</td>
+                            <td>@Model.Yesterday</td>
+                        </tr>
+                        <tr>
+                            <td>This Week</td>
+                            <td>@Model.ThisWeek</td>
+                        </tr>
+                        <tr>
+                            <td>Customers online</td>
+                            <td>@ViewBag.Visitors_online</td>
+                        </tr>
+                    </table>
+                </div>
+            }

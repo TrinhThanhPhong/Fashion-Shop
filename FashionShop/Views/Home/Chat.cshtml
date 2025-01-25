@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+
+<div style="margin-top: 152px; width: 50%; height:623px; border: solid 5px green; border-radius: 1%; margin-left: 380px; padding:10px;">
+    <div class="container" style="height: 94%; width: 100%;">
+        <ul id="contentMsg" style="font-size: 20px;">
+        </ul>
+    </div>
+    <div class="container" id="divChat" style="display: flex; justify-content: flex-end; padding-left: 0px; padding-right: 0px;">
+        <input type="text" id="txtMessage" style="width: 100%; font-size: 20px;"/>
+        <button class="btn btn-success" id="btnSend">Send</button>
+    </div>
+    @*<div class="container" id="divLogin">
+        <input type="text" id="txtName" placeholder="Name" />
+        <button class="btn btn-success" id="btnLogin">Login</button>
+        <input type="hidden" id="hName" />
+    </div>*@
+</div>
+
+
+@section scripts {
+    <script>
+        //function show() {
+        //    $('#divLogin').hide();
+        //    $('#divChat').show();
+        //}
+        //function hide() {
+        //    $('#divLogin').show();
+        //    $('#divChat').hide();
+        //}
+        $(function () {
+            /*$('#divChat').hide();*/
+
+            var chat = $.connection.chat;
+            console.log(chat);
+            loadClient(chat);
+            $.connection.hub.start().done(function () {
+                //$('#btnLogin').click(function () {
+                //    var name = $("#txtName").val();
+                //    chat.server.connect(name);
+                //    //show();
+                //});
+                $('#btnSend').click(function () {
+                    var msg = $('#txtMessage').val();
+                    //var name = $('#hName').val();
+                    var name = "@User.Identity.Name";
+                    chat.server.message(name, msg);
+                    $('#txtMessage').val('').focus();
+                });
+            });
+
+        });
+
+        function loadClient(chat) {
+            chat.client.message = function (name, msg) {
+                $('#contentMsg').append("<li><strong>" + name + "</strong>: " + msg + "</li>");
+            }
+            chat.client.connect = function (name) {
+                $('#hName').val(name);
+            }
+        }
+    </script>    
+}
