@@ -287,6 +287,10 @@
     <Compile Include="Migrations\202501231125548_Table_Review_Edit_ForeignKey.designer.cs">
       <DependentUpon>202501231125548_Table_Review_Edit_ForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502191818015_ahihi.cs" />
+    <Compile Include="Migrations\202502191818015_ahihi.designer.cs">
+      <DependentUpon>202502191818015_ahihi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3710,6 +3714,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202501231125548_Table_Review_Edit_ForeignKey.resx">
       <DependentUpon>202501231125548_Table_Review_Edit_ForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502191818015_ahihi.resx">
+      <DependentUpon>202502191818015_ahihi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

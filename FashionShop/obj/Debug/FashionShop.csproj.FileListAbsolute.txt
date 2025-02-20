@@ -280,3 +280,4 @@ D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.csproj.CoreCompileInput
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.csproj.CopyComplete
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.dll
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.pdb
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.ahihi.resources

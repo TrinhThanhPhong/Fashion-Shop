@@ -1,6 +1,6 @@
 ﻿@model FashionShop.Models.EF.Product
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Add product";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -108,7 +108,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Price</label>
-                                                    <input type="text" name="demoPrice" id="demoPrice" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    <input type="text" name="demoPrice" id="demoPrice" value="0"  class="form-control auto" data-a-dec="," data-a-sep="." />
                                                     @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Price" })
                                                     @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                 </div>
@@ -117,7 +117,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Price Discount</label>
-                                                    <input type="text" name="demoPriceSale" id="demoPriceSale" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    <input type="text" name="demoPriceSale" id="demoPriceSale" value="0" class="form-control auto" data-a-dec="," data-a-sep="." />
                                                     @Html.HiddenFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Price Discount" })
                                                     @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
                                                 </div>
@@ -126,7 +126,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Original Price</label>
-                                                    <input type="text" name="demoOriginalPrice" id="demoOriginalPrice" value="@Model.OriginalPrice" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    <input type="text" name="demoOriginalPrice" id="demoOriginalPrice" value="0" class="form-control auto" data-a-dec="," data-a-sep="." />
                                                     @Html.HiddenFor(x => x.OriginalPrice, new { @class = "form-control", @placeholder = "Original Price" })
                                                     @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                 </div>

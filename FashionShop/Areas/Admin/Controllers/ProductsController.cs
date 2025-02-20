@@ -73,7 +73,10 @@ namespace FashionShop.Areas.Admin.Controllers
                     model.SeoTitle = model.Title;
                 }
                 if (string.IsNullOrEmpty(model.Alias))
-                model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
+                {
+                    model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
+                }
+                
                 db.Product.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");

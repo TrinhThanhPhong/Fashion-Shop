@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FashionShop",
+    "\\FashionShop\\Areas",
+    "\\FashionShop\\Areas\\Admin",
+    "\\FashionShop\\Areas\\Admin\\Views",
+    "\\FashionShop\\Areas\\Admin\\Views\\Products"
   ],
-  "SelectedNode": "\\FashionShop.sln",
+  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Views\\Products\\Add.cshtml",
   "PreviewInSolutionExplorer": false
 }
