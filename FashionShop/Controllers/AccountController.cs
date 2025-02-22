@@ -17,7 +17,7 @@ namespace FashionShop.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private ApplicationDbContext db = new ApplicationDbContext();
         public AccountController()
         {
         }
@@ -77,6 +77,25 @@ namespace FashionShop.Controllers
                 return RedirectToAction("Profile");
             }
             return View(req);
+        }
+
+        public async Task<ActionResult> History()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            ViewBag.userEmail = user?.Email;
+            var orders = db.Order.ToList();
+            return View(orders);
+        }
+        public ActionResult View(int id)
+        {
+            var item = db.Order.Find(id);
+            return View(item);
+        }
+
+        public ActionResult Partial_Products(int id)
+        {
+            var items = db.OrderDetail.Where(x => x.OrderId == id).ToList();
+            return PartialView(items);
         }
         //
         // GET: /Account/Login

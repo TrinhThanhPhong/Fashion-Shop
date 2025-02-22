@@ -3640,6 +3640,9 @@
     <Content Include="Views\Review\_Review.cshtml" />
     <Content Include="Views\Review\Load_Review.cshtml" />
     <Content Include="Views\Home\Chat.cshtml" />
+    <Content Include="Views\Account\History.cshtml" />
+    <Content Include="Views\Account\View.cshtml" />
+    <Content Include="Views\Account\Partial_Products.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

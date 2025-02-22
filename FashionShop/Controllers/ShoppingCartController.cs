@@ -146,6 +146,14 @@ namespace FashionShop.Controllers
                         Quantity = x.Quantity,
                         Price = x.Price
                     }));
+                    foreach(var item in cart.items)
+                    {
+                        var product = db.Product.FirstOrDefault(p => p.Id == item.ProductId);
+                        if(product != null)
+                        {
+                            product.Quantity -= item.Quantity;
+                        }
+                    }
                     order.TotalAmount = cart.items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;

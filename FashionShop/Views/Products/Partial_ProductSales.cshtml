@@ -47,7 +47,15 @@
                                                 }
                                             </div>
                                         </div>
-                                        <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                                        @if (item.Quantity == 0)
+                                        {
+                                            <div class="red_button add_to_cart_button"><a href="#" data-id="@item.Id">Out of stock</a></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                                        }
+
                                     </div>
                                 </div>
 

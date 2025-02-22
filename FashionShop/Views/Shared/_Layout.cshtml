@@ -41,29 +41,29 @@
 
                                     <!-- Currency / Language / My Account -->
                                     @*<li class="currency">
-                                            <a href="#">
-                                                usd
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="currency_selection">
-                                                <li><a href="#">cad</a></li>
-                                                <li><a href="#">aud</a></li>
-                                                <li><a href="#">eur</a></li>
-                                                <li><a href="#">gbp</a></li>
-                                            </ul>
-                                        </li>*@
+                                        <a href="#">
+                                            usd
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="currency_selection">
+                                            <li><a href="#">cad</a></li>
+                                            <li><a href="#">aud</a></li>
+                                            <li><a href="#">eur</a></li>
+                                            <li><a href="#">gbp</a></li>
+                                        </ul>
+                                    </li>*@
                                     @*<li class="language">
-                                            <a href="#">
-                                                English
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="language_selection">
-                                                <li><a href="#">French</a></li>
-                                                <li><a href="#">Italian</a></li>
-                                                <li><a href="#">German</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                            </ul>
-                                        </li>*@
+                                        <a href="#">
+                                            English
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="language_selection">
+                                            <li><a href="#">French</a></li>
+                                            <li><a href="#">Italian</a></li>
+                                            <li><a href="#">German</a></li>
+                                            <li><a href="#">Spanish</a></li>
+                                        </ul>
+                                    </li>*@
                                     <li class="account">
 
                                         @if (!Request.IsAuthenticated)
@@ -89,7 +89,7 @@
                                                     <li><a href="/Admin/RevenueStatistical/index">Controll</a></li>
                                                 }
                                                 <li><a href="/Account/Profile">Profile</a></li>
-                                                <li><a href="/Account/Profile">Favorite</a></li>
+                                                <li><a href="/Account/History">History</a></li>
                                                 <li><a href="javascript: document.getElementById('LogOffForm').submit()">LogOut</a></li>
                                             </ul>
                                         }
@@ -141,7 +141,7 @@
             </div>
 
         </header>
-
+        @RenderSection("naviheader", required: false)
         <div class="fs_menu_overlay"></div>
         <div class="hamburger_menu">
             <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>

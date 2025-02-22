@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FashionShop.Models.EF.Order>
+@{
+    ViewBag.Title = "Purchase History";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+<style>
+    .news-section-container {
+        margin-top: 200px;
+    }
+</style>
+<div class="container news-section-container">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Purchase History List</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Order code</th>
+                        <th>Customer name</th>
+                        <th>Phone</th>
+                        <th>Bill</th>
+                        <th>Status</th>
+                        <th>Created date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model.Where(o => o.Email == ViewBag.userEmail))
+                        {
+                            if(item.Email == ViewBag.userEmail)
+                            {
+                            <tr>
+                                <td></td>
+                                <td>@item.Code</td>
+                                <td>@item.CustomerName</td>
+                                <td>@item.Phone</td>
+                                <td>@FashionShop.Models.common.Common.FormatNumber(item.TotalAmount, 0)</td>
+                                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    <a href="/Account/View/@item.Id" class="btn btn-sm btn-success">View</a>
+                                </td>
+                            </tr>
+                            }
+                            
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+
+        </div>
+        <!-- /.card-footer-->
+    </div>
+</div>

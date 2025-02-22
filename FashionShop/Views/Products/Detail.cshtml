@@ -63,6 +63,7 @@
                         <h2>@Model.Title</h2>
                         <p>@Model.Description</p>
                         <p>Views: <b>@Model.ViewCount</b></p>
+                        <p>Remaining: <b>@Model.Quantity</b></p>
                     </div>
                     @if (Model.PriceSale > 0)
                     {
@@ -88,7 +89,15 @@
                             <span id="quantity_value">1</span>
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@Model.Id">add to cart</a></div>
+                        @if (Model.Quantity == 0)
+                        {
+                            <div class="red_button add_to_cart_button"><a href="#" data-id="@Model.Id">Out of stock</a></div>
+                        }
+                        else
+                        {
+                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@Model.Id">add to cart</a></div>
+                        }
+
                         <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                     </div>
                 </div>

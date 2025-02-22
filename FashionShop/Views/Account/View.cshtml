@@ -1,9 +1,10 @@
 ﻿@model FashionShop.Models.EF.Order
 @using PagedList
 @{
-    ViewBag.Title = "Order Detail";
+    ViewBag.Title = "View";
 }
-
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
 @section naviheader {
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -13,7 +14,7 @@
             <a href="/Admin/RevenueStatistical/index" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Order Detail</a>
+            <a href="#" class="nav-link">Purchase History Detail</a>
         </li>
     </ul>
 }
@@ -25,7 +26,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Order Detail</h3>
+            <h3 class="card-title">Purchase History Detail</h3>
         </div>
         <div class="card-body">
             <div class="row">
@@ -82,9 +83,9 @@
                 </div>
                 <div class="col-md-6">
                     @*<div class="form-group">
-                        <label>Email</label>
-                        <p class="form-control">@Model.Email</p>
-                    </div>*@
+                            <label>Email</label>
+                            <p class="form-control">@Model.Email</p>
+                        </div>*@
                 </div>
             </div>
 
@@ -93,13 +94,13 @@
                     <h2>Products List</h2>
                 </div>
                 <div class="col-12">
-                    @Html.Action("Partial_Products", "Order", new { id = Model.Id })
+                    @Html.Action("Partial_Products", "Account", new { id = Model.Id })
                 </div>
             </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            
+
         </div>
         <!-- /.card-footer-->
     </div>
