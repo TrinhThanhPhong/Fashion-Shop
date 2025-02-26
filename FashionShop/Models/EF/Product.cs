@@ -28,6 +28,20 @@ namespace FashionShop.Models.EF
         public string Alias { get; set; }
         [StringLength(50)]
         public string ProductCode { get; set; }
+        [Required]
+        public int SizeXS { get; set; }
+        [Required]
+        public int SizeS { get; set; }
+        [Required]
+        public int SizeM { get; set; }
+        [Required]
+        public int SizeL { get; set; }
+        [Required]
+        public int SizeXL { get; set; }
+        [Required]
+        public int SizeXXL { get; set; }
+        [Required]
+        public int SizeXXXL { get; set; }
         public string Description { get; set; }
         [AllowHtml]
         public string Detail { get; set; }

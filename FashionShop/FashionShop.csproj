@@ -291,6 +291,30 @@
     <Compile Include="Migrations\202502191818015_ahihi.designer.cs">
       <DependentUpon>202502191818015_ahihi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502241900506_AddSizeProduct.cs" />
+    <Compile Include="Migrations\202502241900506_AddSizeProduct.designer.cs">
+      <DependentUpon>202502241900506_AddSizeProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502241905531_EditSizeProduct.cs" />
+    <Compile Include="Migrations\202502241905531_EditSizeProduct.designer.cs">
+      <DependentUpon>202502241905531_EditSizeProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502241930151_EditSizeProductAgain.cs" />
+    <Compile Include="Migrations\202502241930151_EditSizeProductAgain.designer.cs">
+      <DependentUpon>202502241930151_EditSizeProductAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502241931592_EditSizeProductMoreAgain.cs" />
+    <Compile Include="Migrations\202502241931592_EditSizeProductMoreAgain.designer.cs">
+      <DependentUpon>202502241931592_EditSizeProductMoreAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502241933167_EditSizeProductOneMoreTime.cs" />
+    <Compile Include="Migrations\202502241933167_EditSizeProductOneMoreTime.designer.cs">
+      <DependentUpon>202502241933167_EditSizeProductOneMoreTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502261957375_addSizetoshoppingcart.cs" />
+    <Compile Include="Migrations\202502261957375_addSizetoshoppingcart.designer.cs">
+      <DependentUpon>202502261957375_addSizetoshoppingcart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3720,6 +3744,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502191818015_ahihi.resx">
       <DependentUpon>202502191818015_ahihi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502241900506_AddSizeProduct.resx">
+      <DependentUpon>202502241900506_AddSizeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502241905531_EditSizeProduct.resx">
+      <DependentUpon>202502241905531_EditSizeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502241930151_EditSizeProductAgain.resx">
+      <DependentUpon>202502241930151_EditSizeProductAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502241931592_EditSizeProductMoreAgain.resx">
+      <DependentUpon>202502241931592_EditSizeProductMoreAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502241933167_EditSizeProductOneMoreTime.resx">
+      <DependentUpon>202502241933167_EditSizeProductOneMoreTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502261957375_addSizetoshoppingcart.resx">
+      <DependentUpon>202502261957375_addSizetoshoppingcart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

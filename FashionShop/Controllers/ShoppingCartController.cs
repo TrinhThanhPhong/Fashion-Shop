@@ -152,7 +152,7 @@ namespace FashionShop.Controllers
                         if(product != null)
                         {
                             product.Quantity -= item.Quantity;
-                        }
+                        } 
                     }
                     order.TotalAmount = cart.items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.TypePayment;

@@ -5,6 +5,44 @@
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_styles.css">
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_responsive.css">
 
+<style>
+    .size-options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+        .size-options label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            user-select: none;
+        }
+
+        .size-options input[type="radio"] {
+            display: none;
+        }
+
+            .size-options input[type="radio"]:checked + label {
+                background-color: #007bff;
+                color: white;
+                border-color: #007bff;
+            }
+
+        .size-options label:hover {
+            background-color: #f0f0f0;
+        }
+
+</style>
+
 @if (Model != null)
 {
     <div class="container single_product_container">
@@ -67,12 +105,12 @@
                     </div>
                     @if (Model.PriceSale > 0)
                     {
-                <div class="original_price">@FashionShop.Models.common.Common.FormatNumber(Model.Price, 0)</div>
-                <div class="product_price">@FashionShop.Models.common.Common.FormatNumber(Model.PriceSale, 0)</div>
+                        <div class="original_price">@FashionShop.Models.common.Common.FormatNumber(Model.Price, 0)</div>
+                        <div class="product_price">@FashionShop.Models.common.Common.FormatNumber(Model.PriceSale, 0)</div>
                     }
                     else
                     {
-                <div class="product_price">@FashionShop.Models.common.Common.FormatNumber(Model.Price, 0)</div>
+                        <div class="product_price">@FashionShop.Models.common.Common.FormatNumber(Model.Price, 0)</div>
                     }
 
                     <ul class="star_rating">
@@ -82,16 +120,42 @@
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                     </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="size-options">
+                        <input type="radio" id="sizeXS" name="selectSize" value="XS" data-max="@Model.SizeXS"/>
+                        <label for="sizeXS">XS</label>
+
+                        <input type="radio" id="sizeS" name="selectSize" value="S" data-max="@Model.SizeS"/>
+                        <label for="sizeS">S</label>
+
+                        <input type="radio" id="sizeM" name="selectSize" value="M" data-max="@Model.SizeM" />
+                        <label for="sizeM">M</label>
+
+                        <input type="radio" id="sizeL" name="selectSize" value="L" data-max="@Model.SizeL"/>
+                        <label for="sizeL">L</label>
+
+                        <input type="radio" id="sizeXL" name="selectSize" value="XL" data-max="@Model.SizeXL"/>
+                        <label for="sizeXL">XL</label>
+
+                        <input type="radio" id="sizeXXL" name="selectSize" value="XXL" data-max="@Model.SizeXXL"/>
+                        <label for="sizeXXL">XXL</label>
+
+                        <input type="radio" id="sizeXXXL" name="selectSize" value="XXXL" data-max="@Model.SizeXXXL"/>
+                        <label for="sizeXXXL">XXXL</label>
+                    </div>
+
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                         <span>Quantity:</span>
                         <div class="quantity_selector">
                             <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                            <span id="quantity_value">1</span>
+                            <span id="quantity_value">0</span>
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
                         @if (Model.Quantity == 0)
                         {
-                            <div class="red_button add_to_cart_button"><a href="#" data-id="@Model.Id">Out of stock</a></div>
+                            <div class="red_button add_to_cart_button" style="color: white;">Out of stock</div>
                         }
                         else
                         {
@@ -165,5 +229,44 @@
 }
 
 @section scripts{
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const minusBtn = document.querySelector(".minus");
+            const plusBtn = document.querySelector(".plus");
+            const quantityValue = document.getElementById("quantity_value");
+            let maxValue = 1;
+
+            function updateMaxValue() {
+                const selectedSize = document.querySelector('input[name="selectSize"]:checked');
+                if (selectedSize) {
+                    maxValue = parseInt(selectedSize.getAttribute("data-max"));
+                    quantityValue.textContent = 1;
+                }
+            }
+
+            document.querySelectorAll('input[name="selectSize"]').forEach(size => {
+                size.addEventListener("change", updateMaxValue);
+            });
+
+            
+            plusBtn.addEventListener("click", function () {
+                let currentValue = parseInt(quantityValue.textContent);
+                console.log("Current:", currentValue, "Max:", maxValue);
+                if (currentValue < maxValue) {
+                    quantityValue.textContent = currentValue + 1;
+                }
+            });
+
+            minusBtn.addEventListener("click", function () {
+                let currentValue = parseInt(quantityValue.textContent);
+                if (currentValue > 1) {
+                    quantityValue.textContent = currentValue - 1;
+                }
+            });
+        });
+
+    </script>
+
     <script src="~/Content/assets/js/single_custom.js"></script>
 }

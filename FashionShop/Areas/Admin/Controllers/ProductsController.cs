@@ -76,7 +76,7 @@ namespace FashionShop.Areas.Admin.Controllers
                 {
                     model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
                 }
-                
+                model.Quantity = model.SizeXS + model.SizeS + model.SizeM + model.SizeL + model.SizeXL + model.SizeXXL + model.SizeXXXL;
                 db.Product.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,12 +98,36 @@ namespace FashionShop.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.ModifiedDate = DateTime.Now;
-                model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
-                db.Product.Attach(model);
-                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var item = db.Product.Find(model.Id);
+                if (item != null)
+                {
+                    item.Title = model.Title;
+                    item.SeoTitle = string.IsNullOrEmpty(model.SeoTitle) ? model.Title : model.SeoTitle;
+                    model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
+                    item.Description = model.Description;
+                    item.Detail = model.Detail;
+                    item.Price = model.Price;
+                    item.PriceSale = model.PriceSale;
+                    item.IsActive = model.IsActive;
+                    item.IsHome = model.IsHome;
+                    item.IsSale = model.IsSale;
+                    item.ProductCategoryId = model.ProductCategoryId;
+                    model.ModifiedDate = DateTime.Now;
+
+                    item.SizeXS = model.SizeXS;
+                    item.SizeS = model.SizeS;
+                    item.SizeM = model.SizeM;
+                    item.SizeL = model.SizeL;
+                    item.SizeXL = model.SizeXL;
+                    item.SizeXXL = model.SizeXXL;
+                    item.SizeXXXL = model.SizeXXXL;
+
+                    item.Quantity = item.SizeXS + item.SizeS + item.SizeM + item.SizeL + item.SizeXL + item.SizeXXL + item.SizeXXXL;
+
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             return View(model);
         }

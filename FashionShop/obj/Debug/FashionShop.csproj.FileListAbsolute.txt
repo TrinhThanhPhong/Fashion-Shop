@@ -423,3 +423,9 @@ C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.csproj.CoreCompileIn
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.csproj.CopyComplete
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.dll
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.pdb
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddSizeProduct.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProduct.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProductAgain.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProductMoreAgain.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProductOneMoreTime.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSizetoshoppingcart.resources

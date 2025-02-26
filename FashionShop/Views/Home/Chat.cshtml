@@ -5,9 +5,12 @@
 }
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
 
+<style>
+    
+</style>
 <div style="margin-top: 152px; width: 50%; height:623px; border: solid 5px green; border-radius: 1%; margin-left: 380px; padding:10px;">
-    <div class="container" style="height: 94%; width: 100%;">
-        <ul id="contentMsg" style="font-size: 20px;">
+    <div class="container" style="height: 94%; width: 100%; overflow-y: auto;">
+        <ul id="contentMsg" style="font-size: 20px; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
         </ul>
     </div>
     <div class="container" id="divChat" style="display: flex; justify-content: flex-end; padding-left: 0px; padding-right: 0px;">
@@ -57,11 +60,18 @@
 
         function loadClient(chat) {
             chat.client.message = function (name, msg) {
-                $('#contentMsg').append("<li><strong>" + name + "</strong>: " + msg + "</li>");
+                $('#contentMsg').append("<li style='max - width: 100 %; word - wrap: break-word; overflow - wrap: break-word; white - space: normal;'><strong>" + name + "</strong>: " + msg + "</li>");
+                scrollToBottom();
             }
             chat.client.connect = function (name) {
                 $('#hName').val(name);
             }
+            
+        }
+
+        function scrollToBottom() {
+            var chatContainer = document.querySelector(".container[style*='overflow-y: auto']");
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         }
     </script>    
 }
