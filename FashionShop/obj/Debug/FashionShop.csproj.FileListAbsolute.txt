@@ -429,3 +429,5 @@ C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeP
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProductMoreAgain.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeProductOneMoreTime.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSizetoshoppingcart.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddSizeShoppingCart.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddSizeShoppingCart2.resources

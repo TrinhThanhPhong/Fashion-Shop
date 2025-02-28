@@ -6,7 +6,8 @@
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_responsive.css">
 
 <style>
-    .size-options {
+    .size-options, 
+    .divSizeRemaining {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,6 +42,9 @@
             background-color: #f0f0f0;
         }
 
+    #sizeRemaining {
+        font-size: 15px;
+    }
 </style>
 
 @if (Model != null)
@@ -102,6 +106,16 @@
                         <p>@Model.Description</p>
                         <p>Views: <b>@Model.ViewCount</b></p>
                         <p>Remaining: <b>@Model.Quantity</b></p>
+                        <div class="divSizeRemaining">
+                            <p id="sizeRemaining">XS: <b>@Model.SizeXS</b></p>
+                            <p id="sizeRemaining">S: <b>@Model.SizeS</b></p>
+                            <p id="sizeRemaining">M: <b>@Model.SizeM</b></p>
+                            <p id="sizeRemaining">L: <b>@Model.SizeL</b></p>
+                            <p id="sizeRemaining">XL: <b>@Model.SizeXL</b></p>
+                            <p id="sizeRemaining">XXL: <b>@Model.SizeXXL</b></p>
+                            <p id="sizeRemaining">XXXL: <b>@Model.SizeXXXL</b></p>
+                        </div>
+                        
                     </div>
                     @if (Model.PriceSale > 0)
                     {
