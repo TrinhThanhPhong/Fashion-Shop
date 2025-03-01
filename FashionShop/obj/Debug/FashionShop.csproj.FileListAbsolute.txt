@@ -431,3 +431,11 @@ C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditSizeP
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSizetoshoppingcart.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddSizeShoppingCart.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddSizeShoppingCart2.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateSizeShopingCart.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.ahihi1.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.deleteahihi.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.shopingcartsize.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.sizeproductshopingcart.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.test.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.test2.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.reset.resources

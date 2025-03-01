@@ -323,6 +323,38 @@
     <Compile Include="Migrations\202502270715099_AddSizeShoppingCart2.designer.cs">
       <DependentUpon>202502270715099_AddSizeShoppingCart2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503010511037_UpdateSizeShopingCart.cs" />
+    <Compile Include="Migrations\202503010511037_UpdateSizeShopingCart.designer.cs">
+      <DependentUpon>202503010511037_UpdateSizeShopingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010518091_ahihi1.cs" />
+    <Compile Include="Migrations\202503010518091_ahihi1.designer.cs">
+      <DependentUpon>202503010518091_ahihi1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010518561_deleteahihi.cs" />
+    <Compile Include="Migrations\202503010518561_deleteahihi.designer.cs">
+      <DependentUpon>202503010518561_deleteahihi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010519476_shopingcartsize.cs" />
+    <Compile Include="Migrations\202503010519476_shopingcartsize.designer.cs">
+      <DependentUpon>202503010519476_shopingcartsize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010521302_sizeproductshopingcart.cs" />
+    <Compile Include="Migrations\202503010521302_sizeproductshopingcart.designer.cs">
+      <DependentUpon>202503010521302_sizeproductshopingcart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010528035_test.cs" />
+    <Compile Include="Migrations\202503010528035_test.designer.cs">
+      <DependentUpon>202503010528035_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010529124_test2.cs" />
+    <Compile Include="Migrations\202503010529124_test2.designer.cs">
+      <DependentUpon>202503010529124_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503010547142_reset.cs" />
+    <Compile Include="Migrations\202503010547142_reset.designer.cs">
+      <DependentUpon>202503010547142_reset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3776,6 +3808,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502270715099_AddSizeShoppingCart2.resx">
       <DependentUpon>202502270715099_AddSizeShoppingCart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010511037_UpdateSizeShopingCart.resx">
+      <DependentUpon>202503010511037_UpdateSizeShopingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010518091_ahihi1.resx">
+      <DependentUpon>202503010518091_ahihi1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010518561_deleteahihi.resx">
+      <DependentUpon>202503010518561_deleteahihi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010519476_shopingcartsize.resx">
+      <DependentUpon>202503010519476_shopingcartsize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010521302_sizeproductshopingcart.resx">
+      <DependentUpon>202503010521302_sizeproductshopingcart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010528035_test.resx">
+      <DependentUpon>202503010528035_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010529124_test2.resx">
+      <DependentUpon>202503010529124_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503010547142_reset.resx">
+      <DependentUpon>202503010547142_reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
