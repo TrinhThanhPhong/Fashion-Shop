@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FashionShop.Models.common;
 using FashionShop.Models.EF;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -42,6 +43,8 @@ namespace FashionShop.Models
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<Subcribe> Subcribe { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
 
         public static ApplicationDbContext Create()
         {

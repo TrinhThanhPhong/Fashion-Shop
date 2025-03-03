@@ -5,8 +5,12 @@
     "\\FashionShop\\Areas",
     "\\FashionShop\\Areas\\Admin",
     "\\FashionShop\\Areas\\Admin\\Views",
-    "\\FashionShop\\Areas\\Admin\\Views\\Products"
+    "\\FashionShop\\Areas\\Admin\\Views\\Products",
+    "\\FashionShop\\Models",
+    "\\FashionShop\\Models\\EF",
+    "\\FashionShop\\Views",
+    "\\FashionShop\\Views\\Products"
   ],
-  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Views\\Products\\Add.cshtml",
+  "SelectedNode": "\\FashionShop\\Models\\ShoppingCart.cs",
   "PreviewInSolutionExplorer": false
 }

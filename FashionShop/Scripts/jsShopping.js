@@ -5,13 +5,14 @@
         var id = $(this).data('id');
         var quantity = 1;
         var tQuantity = $('#quantity_value').text();
+        var Size = $('input[name="selectSize"]:checked').val();
         if (tQuantity != '') {
             quantity = parseInt(tQuantity);
         }
         $.ajax({
             url: '/shoppingcart/addtocart',
             type: 'POST',
-            data: { id: id, quantity: quantity },
+            data: { id: id, quantity: quantity, size: Size },
             success: function (rs) {
                 if (rs.Success) {
                     $('#checkout_items').html(rs.Count);

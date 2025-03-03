@@ -355,6 +355,18 @@
     <Compile Include="Migrations\202503010547142_reset.designer.cs">
       <DependentUpon>202503010547142_reset.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503011917314_addSize.cs" />
+    <Compile Include="Migrations\202503011917314_addSize.designer.cs">
+      <DependentUpon>202503011917314_addSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503011926104_addSize3.cs" />
+    <Compile Include="Migrations\202503011926104_addSize3.designer.cs">
+      <DependentUpon>202503011926104_addSize3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503011926435_addSize4.cs" />
+    <Compile Include="Migrations\202503011926435_addSize4.designer.cs">
+      <DependentUpon>202503011926435_addSize4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3832,6 +3844,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503010547142_reset.resx">
       <DependentUpon>202503010547142_reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503011917314_addSize.resx">
+      <DependentUpon>202503011917314_addSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503011926104_addSize3.resx">
+      <DependentUpon>202503011926104_addSize3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503011926435_addSize4.resx">
+      <DependentUpon>202503011926435_addSize4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

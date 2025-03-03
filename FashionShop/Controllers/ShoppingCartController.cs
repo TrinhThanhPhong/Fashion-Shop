@@ -144,14 +144,42 @@ namespace FashionShop.Controllers
                     cart.items.ForEach(x => order.orderDetails.Add(new OrderDetail { 
                         ProductId = x.ProductId,
                         Quantity = x.Quantity,
-                        Price = x.Price
+                        Price = x.Price,
+                        Size = x.Size
                     }));
                     foreach(var item in cart.items)
                     {
                         var product = db.Product.FirstOrDefault(p => p.Id == item.ProductId);
                         if(product != null)
                         {
-                            product.Quantity -= item.Quantity;
+                            if(item.Size == "XS")
+                            {
+                                product.SizeXS -= item.Quantity;
+                            }
+                            if (item.Size == "S")
+                            {
+                                product.SizeS -= item.Quantity;
+                            }
+                            if (item.Size == "M")
+                            {
+                                product.SizeM -= item.Quantity;
+                            }
+                            if (item.Size == "L")
+                            {
+                                product.SizeL -= item.Quantity;
+                            }
+                            if (item.Size == "XL")
+                            {
+                                product.SizeXL -= item.Quantity;
+                            }
+                            if (item.Size == "XXL")
+                            {
+                                product.SizeXXL -= item.Quantity;
+                            }
+                            if (item.Size == "XXXL")
+                            {
+                                product.SizeXXXL -= item.Quantity;
+                            }
                         } 
                     }
                     order.TotalAmount = cart.items.Sum(x => (x.Price * x.Quantity));
@@ -213,7 +241,7 @@ namespace FashionShop.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddToCart(int id, int quantity)
+        public ActionResult AddToCart(int id, int quantity, string size)
         {
             var code = new { Success = false, msg = "", code = -1, Count = 0 };
             var db = new ApplicationDbContext();
@@ -227,11 +255,12 @@ namespace FashionShop.Controllers
                     cart = new ShoppingCart();
                 }
                 ShoppingCartItem item = new ShoppingCartItem
-                {   
+                {
                     ProductId = checkProduct.Id,
                     ProductName = checkProduct.Title,
                     CategoryName = checkProduct.ProductCategory.Title,
                     Alias = checkProduct.Alias,
+                    Size = size,
                     Quantity = quantity
                 };
                 if (checkProduct.ProductImage.FirstOrDefault(x => x.IsDefault) != null)
