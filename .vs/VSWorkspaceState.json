@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\FashionShop",
+    "\\FashionShop\\Areas",
+    "\\FashionShop\\Areas\\Admin",
+    "\\FashionShop\\Areas\\Admin\\Views",
+    "\\FashionShop\\Areas\\Admin\\Views\\Products",
+    "\\FashionShop\\Models",
+    "\\FashionShop\\Models\\EF",
+    "\\FashionShop\\Scripts",
+    "\\FashionShop\\Views",
+    "\\FashionShop\\Views\\Products"
+  ],
+  "SelectedNode": "\\FashionShop\\Scripts\\jsShopping.js",
+  "PreviewInSolutionExplorer": false
+}
