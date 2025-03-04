@@ -462,3 +462,5 @@ C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize3.
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddProductType.resources
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddProductType.resources
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditChangePassword.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditChangePassword.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddBrandProduct.resources

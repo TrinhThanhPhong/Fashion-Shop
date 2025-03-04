@@ -106,6 +106,7 @@
                         <p>@Model.Description</p>
                         <p>Views: <b>@Model.ViewCount</b></p>
                         <p>Remaining: <b>@Model.Quantity</b></p>
+                        <p>Brand: <b>@Model.ProductBrand</b></p>
                         <div class="divSizeRemaining">
                             <p id="sizeRemaining">XS: <b>@Model.SizeXS</b></p>
                             <p id="sizeRemaining">S: <b>@Model.SizeS</b></p>
@@ -115,7 +116,7 @@
                             <p id="sizeRemaining">XXL: <b>@Model.SizeXXL</b></p>
                             <p id="sizeRemaining">XXXL: <b>@Model.SizeXXXL</b></p>
                         </div>
-                        
+
                     </div>
                     @if (Model.PriceSale > 0)
                     {

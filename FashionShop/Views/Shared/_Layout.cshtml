@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
@@ -41,29 +42,29 @@
 
                                     <!-- Currency / Language / My Account -->
                                     @*<li class="currency">
-                                        <a href="#">
-                                            usd
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="currency_selection">
-                                            <li><a href="#">cad</a></li>
-                                            <li><a href="#">aud</a></li>
-                                            <li><a href="#">eur</a></li>
-                                            <li><a href="#">gbp</a></li>
-                                        </ul>
-                                    </li>*@
+                                            <a href="#">
+                                                usd
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="currency_selection">
+                                                <li><a href="#">cad</a></li>
+                                                <li><a href="#">aud</a></li>
+                                                <li><a href="#">eur</a></li>
+                                                <li><a href="#">gbp</a></li>
+                                            </ul>
+                                        </li>*@
                                     @*<li class="language">
-                                        <a href="#">
-                                            English
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="language_selection">
-                                            <li><a href="#">French</a></li>
-                                            <li><a href="#">Italian</a></li>
-                                            <li><a href="#">German</a></li>
-                                            <li><a href="#">Spanish</a></li>
-                                        </ul>
-                                    </li>*@
+                                            <a href="#">
+                                                English
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="language_selection">
+                                                <li><a href="#">French</a></li>
+                                                <li><a href="#">Italian</a></li>
+                                                <li><a href="#">German</a></li>
+                                                <li><a href="#">Spanish</a></li>
+                                            </ul>
+                                        </li>*@
                                     <li class="account">
 
                                         @if (!Request.IsAuthenticated)
@@ -241,50 +242,151 @@
     </div>
     @if (Request.IsAuthenticated)
     {
-        <a id="chatBubble" href="/Home/Chat">
+        <a id="chatBubble" class="open-button" onclick="openForm()">
             💬 @*Chat with us*@
         </a>
-    }
-        <style>
-            #chatBubble {
-                position: fixed;
-                bottom: 70px;
-                right: 50px;
-                width: 60px;
-                height: 60px;
-                background-color: #007bff;
-                color: white;
-                font-size: 36px;
-                text-align: center;
-                line-height: 60px;
-                border-radius: 50%;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+        <div class="chat-popup" id="myForm" style="width: 20%; height:50%; border: solid 5px green; border-radius: 1%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0px; border-bottom: 2px solid black;">
+                <h3 style="margin: 0; font-size: 20px; margin-left: 10px;"><i class="fa-solid fa-robot"></i> Bot</h3>
+                <button type="button" class="btn cancel" onclick="closeForm()">X</button>
+            </div>
+            <form action="/action_page.php" class="form-container">
+
+
+                <div class="container" style="height: 94%; width: 100%; overflow-y: auto;">
+                    <ul id="contentMsg" style="font-size: 20px; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; height: 370px;">
+                    </ul>
+                </div>
+                <div class="container" id="divChat" style="display: flex; justify-content: flex-end; padding-left: 0px; padding-right: 0px;">
+                    <input type="text" placeholder="Type message.." id="txtMessage" name="msg" required style="width: 100%; font-size: 20px;" />
+                    <button type="submit" class="btn btn-success" id="btnSend">Send</button>
+                </div>
+
+
+            </form>
+        </div>
+
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+                document.getElementById("chatBubble").style.display = "none";
             }
 
-                #chatBubble:hover {
-                    transform: scale(1.1);
-                    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+                document.getElementById("chatBubble").style.display = "block";
+            }
+        </script>
+        <script>
+        $(function () {
+
+            var chat = $.connection.chat;
+            console.log(chat);
+            loadClient(chat);
+            $.connection.hub.start().done(function () {
+                $('#btnSend').click(function () {
+                    var msg = $('#txtMessage').val();
+                    var name = "@User.Identity.Name";
+                    chat.server.message(name, msg);
+                    $('#txtMessage').val('').focus();
+                });
+            });
+
+        });
+
+        function loadClient(chat) {
+            chat.client.message = function (name, msg) {
+                $('#contentMsg').append("<li style='max - width: 100 %; word - wrap: break-word; overflow - wrap: break-word; white - space: normal;'><strong>" + name + "</strong>: " + msg + "</li>");
+                scrollToBottom();
+            }
+            chat.client.connect = function (name) {
+                $('#hName').val(name);
+            }
+
+        }
+
+        function scrollToBottom() {
+            var chatContainer = document.querySelector(".container[style*='overflow-y: auto']");
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        </script>
+    }
+    <style>
+        #chatBubble {
+            position: fixed;
+            bottom: 70px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            #chatBubble:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            background-color: white;
+        }
+
+        .form-container {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+        }
+                .form-container textarea:focus {
+                    background-color: #ddd;
+                    outline: none;
                 }
-        </style>
+            .cancel {
+                background-color: red;
+            }
+
+            .form-container .btn:hover, .open-button:hover {
+                opacity: 1;
+            }
+    </style>
 
 
-        @*@Scripts.Render("~/bundles/jquery")*@
-        <script src="~/Content/assets/styles/bootstrap4/popper.js"></script>
-        <script src="~/Content/assets/styles/bootstrap4/bootstrap.min.js"></script>
-        <script src="~/Content/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
-        <script src="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-        <script src="~/Content/assets/plugins/easing/easing.js"></script>
-        <script src="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-        <script src="~/Content/assets/js/custom.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-        @*@Scripts.Render("~/bundles/bootstrap")*@
-        <script src="~/Scripts/jsShopping.js"></script>
-        <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
-        <script src="~/signalr/hubs"></script>
-        @RenderSection("scripts", required: false)
-    </body>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Content/assets/styles/bootstrap4/popper.js"></script>
+    <script src="~/Content/assets/styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="~/Content/assets/plugins/easing/easing.js"></script>
+    <script src="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="~/Content/assets/js/custom.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/jsShopping.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    @RenderSection("scripts", required: false)
+</body>
 </html>

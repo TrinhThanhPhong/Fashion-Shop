@@ -78,6 +78,11 @@
                                             @Html.ValidationMessageFor(x => x.ProductType, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
+                                            <label for="exampleInputEmail1">Brand</label>
+                                            @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control", @placeholder = "Brand" })
+                                            @Html.ValidationMessageFor(x => x.ProductBrand, null, new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputEmail1">Alias</label>
                                             @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
                                             @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })

@@ -31,6 +31,9 @@ namespace FashionShop.Models.EF
         public string Alias { get; set; }
         [StringLength(50)]
         public string ProductCode { get; set; }
+
+        [Required]
+        public string ProductBrand { get; set; }
         [Required]
         public int SizeXS { get; set; }
         [Required]
