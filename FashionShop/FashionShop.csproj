@@ -367,6 +367,10 @@
     <Compile Include="Migrations\202503031644203_AddProductType.designer.cs">
       <DependentUpon>202503031644203_AddProductType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503041430448_EditChangePassword.cs" />
+    <Compile Include="Migrations\202503041430448_EditChangePassword.designer.cs">
+      <DependentUpon>202503041430448_EditChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3719,6 +3723,8 @@
     <Content Include="Views\Account\History.cshtml" />
     <Content Include="Views\Account\View.cshtml" />
     <Content Include="Views\Account\Partial_Products.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3853,6 +3859,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503031644203_AddProductType.resx">
       <DependentUpon>202503031644203_AddProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503041430448_EditChangePassword.resx">
+      <DependentUpon>202503041430448_EditChangePassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

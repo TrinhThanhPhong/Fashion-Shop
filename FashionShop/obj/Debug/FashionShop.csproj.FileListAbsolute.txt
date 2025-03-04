@@ -457,7 +457,8 @@ D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.test2.resour
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.reset.resources
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize.resources
 D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize3.resources
-D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize4.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.addSize3.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddProductType.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddProductType.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditChangePassword.resources

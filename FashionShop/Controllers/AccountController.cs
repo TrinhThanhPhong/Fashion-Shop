@@ -250,8 +250,9 @@ namespace FashionShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                var user = await UserManager.FindByEmailAsync(model.Email);
+                var it = await UserManager.IsEmailConfirmedAsync(user.Id);
+                if (user == null)
                 {
                     // Don't reveal that the user does not exist or is not confirmed
                     return View("ForgotPasswordConfirmation");
@@ -259,10 +260,14 @@ namespace FashionShop.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                var EmailContent = "<h2 style='color: red;'>Sercurity warning!</h2>" +
+                    "<h3>We have just received a password reset request due to a forgotten password from Sheepo shop.</h3>" +
+                    "<span>Let us know it is you by <a href='" + callbackUrl + "'>click here to reset password</a>.</span>";
+                FashionShop.Models.common.Common.SendMail("Sheepo", "Forgot Password", EmailContent, model.Email);
                 // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -296,7 +301,7 @@ namespace FashionShop.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
@@ -318,6 +323,44 @@ namespace FashionShop.Controllers
         {
             return View();
         }
+
+
+        //-------------------------------------------------------
+        [AllowAnonymous]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/ResetPassword
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            var user = await UserManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                // Don't reveal that the user does not exist
+                return RedirectToAction("ChangePasswordConfirmation", "Account");
+            }
+            var result = await UserManager.ChangePasswordAsync(user.Id,model.OldPassword , model.NewPassword);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ChangePasswordConfirmation", "Account");
+            }
+            return View();
+        }
+
+        //
+        // GET: /Account/ResetPasswordConfirmation
+        [AllowAnonymous]
+        public ActionResult ChangePasswordConfirmation()
+        {
+            return View();
+        }
+        //-------------------------------------------------------
 
         //
         // POST: /Account/ExternalLogin

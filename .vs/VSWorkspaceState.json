@@ -4,14 +4,14 @@
     "\\FashionShop",
     "\\FashionShop\\Areas",
     "\\FashionShop\\Areas\\Admin",
-    "\\FashionShop\\Areas\\Admin\\Views",
-    "\\FashionShop\\Areas\\Admin\\Views\\Products",
+    "\\FashionShop\\Areas\\Admin\\Controllers",
     "\\FashionShop\\Models",
     "\\FashionShop\\Models\\EF",
     "\\FashionShop\\Scripts",
     "\\FashionShop\\Views",
+    "\\FashionShop\\Views\\Contact",
     "\\FashionShop\\Views\\Products"
   ],
-  "SelectedNode": "\\FashionShop\\Scripts\\jsShopping.js",
+  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Controllers\\ProductsController.cs",
   "PreviewInSolutionExplorer": false
 }
