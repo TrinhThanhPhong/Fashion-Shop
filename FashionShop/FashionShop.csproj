@@ -363,9 +363,9 @@
     <Compile Include="Migrations\202503011926104_addSize3.designer.cs">
       <DependentUpon>202503011926104_addSize3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202503011926435_addSize4.cs" />
-    <Compile Include="Migrations\202503011926435_addSize4.designer.cs">
-      <DependentUpon>202503011926435_addSize4.cs</DependentUpon>
+    <Compile Include="Migrations\202503031644203_AddProductType.cs" />
+    <Compile Include="Migrations\202503031644203_AddProductType.designer.cs">
+      <DependentUpon>202503031644203_AddProductType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3851,8 +3851,8 @@
     <EmbeddedResource Include="Migrations\202503011926104_addSize3.resx">
       <DependentUpon>202503011926104_addSize3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202503011926435_addSize4.resx">
-      <DependentUpon>202503011926435_addSize4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202503031644203_AddProductType.resx">
+      <DependentUpon>202503031644203_AddProductType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

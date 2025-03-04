@@ -7,13 +7,13 @@ namespace FashionShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class addSize4 : IMigrationMetadata
+    public sealed partial class AddProductType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addSize4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProductType));
         
         string IMigrationMetadata.Id
         {
-            get { return "202503011926435_addSize4"; }
+            get { return "202503031644203_AddProductType"; }
         }
         
         string IMigrationMetadata.Source

@@ -75,6 +75,11 @@
                                             @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
+                                            <label for="exampleInputEmail1">Product Type</label>
+                                            @Html.TextBoxFor(x => x.ProductType, new { @class = "form-control", @placeholder = "Product type" })
+                                            @Html.ValidationMessageFor(x => x.ProductType, null, new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputEmail1">Alias</label>
                                             @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
                                             @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
@@ -105,7 +110,7 @@
                                             <div class="col-1">
                                                 <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
                                                     <label for="exampleInputEmail1">XS</label>
-                                                    @Html.TextBoxFor(x => x.SizeXS, new { @class = "form-control", @value = "0"})
+                                                    @Html.TextBoxFor(x => x.SizeXS, new { @class = "form-control", @value = "0" })
                                                     @Html.ValidationMessageFor(x => x.SizeXS, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
@@ -155,12 +160,12 @@
                                         @* ------------------------------------------------------------------------------------------ *@
                                         <div class="row">
                                             @*<div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Quantity</label>
-                                                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @value = "1" })
-                                                    @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
-                                                </div>
-                                            </div>*@
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity</label>
+                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @value = "1" })
+                    @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
+                </div>
+            </div>*@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Price</label>

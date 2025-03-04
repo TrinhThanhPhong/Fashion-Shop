@@ -24,6 +24,9 @@ namespace FashionShop.Models.EF
         [Required]
         [StringLength(250)]
         public string Title { get; set; }
+
+        [Required]
+        public string ProductType { get; set; }
         [StringLength(250)]
         public string Alias { get; set; }
         [StringLength(50)]

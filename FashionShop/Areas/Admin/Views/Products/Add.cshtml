@@ -73,6 +73,11 @@
                                             @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
+                                            <label for="exampleInputEmail1">Product Type</label>
+                                            @Html.TextBoxFor(x => x.ProductType, new { @class = "form-control", @placeholder = "Product type" })
+                                            @Html.ValidationMessageFor(x => x.ProductType, null, new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputEmail1">Alias</label>
                                             @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
                                             @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
@@ -98,67 +103,67 @@
                                             @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
                                         </div>
                                         @* ---------------------------------------Size--------------------------------------------------- *@
-                                    <div class="row" style="display: flex; justify-content:space-evenly; align-items: center;">
-                                        <label for="exampleInputEmail1">Size:</label>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">XS</label>
-                                                @Html.TextBoxFor(x => x.SizeXS, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeXS, null, new { @class = "text-danger" })
+                                        <div class="row" style="display: flex; justify-content:space-evenly; align-items: center;">
+                                            <label for="exampleInputEmail1">Size:</label>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">XS</label>
+                                                    @Html.TextBoxFor(x => x.SizeXS, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeXS, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">S</label>
+                                                    @Html.TextBoxFor(x => x.SizeS, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeS, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">M</label>
+                                                    @Html.TextBoxFor(x => x.SizeM, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeM, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">L</label>
+                                                    @Html.TextBoxFor(x => x.SizeL, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeL, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">XL</label>
+                                                    @Html.TextBoxFor(x => x.SizeXL, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeXL, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">XXL</label>
+                                                    @Html.TextBoxFor(x => x.SizeXXL, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeXXL, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
+                                                    <label for="exampleInputEmail1">XXXL</label>
+                                                    @Html.TextBoxFor(x => x.SizeXXXL, new { @class = "form-control", @value = "0" })
+                                                    @Html.ValidationMessageFor(x => x.SizeXXXL, null, new { @class = "text-danger" })
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">S</label>
-                                                @Html.TextBoxFor(x => x.SizeS, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeS, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">M</label>
-                                                @Html.TextBoxFor(x => x.SizeM, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeM, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">L</label>
-                                                @Html.TextBoxFor(x => x.SizeL, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeL, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">XL</label>
-                                                @Html.TextBoxFor(x => x.SizeXL, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeXL, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">XXL</label>
-                                                @Html.TextBoxFor(x => x.SizeXXL, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeXXL, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="col-1">
-                                            <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
-                                                <label for="exampleInputEmail1">XXXL</label>
-                                                @Html.TextBoxFor(x => x.SizeXXXL, new { @class = "form-control", @value = "0" })
-                                                @Html.ValidationMessageFor(x => x.SizeXXXL, null, new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                    </div>
                                         @* ------------------------------------------------------------------------------------------ *@
                                         <div class="row">
                                             @*<div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Quantity</label>
-                                                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @value = "1" })
-                                                    @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
-                                                </div>
-                                            </div>*@
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity</label>
+                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @value = "1" })
+                    @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
+                </div>
+            </div>*@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Price</label>

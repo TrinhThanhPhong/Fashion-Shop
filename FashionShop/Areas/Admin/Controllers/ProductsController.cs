@@ -102,6 +102,7 @@ namespace FashionShop.Areas.Admin.Controllers
                 if (item != null)
                 {
                     item.Title = model.Title;
+                    item.ProductType = model.ProductType;
                     item.SeoTitle = string.IsNullOrEmpty(model.SeoTitle) ? model.Title : model.SeoTitle;
                     model.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
                     item.Description = model.Description;

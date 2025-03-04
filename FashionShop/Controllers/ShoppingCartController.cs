@@ -180,8 +180,11 @@ namespace FashionShop.Controllers
                             {
                                 product.SizeXXXL -= item.Quantity;
                             }
-                        } 
+                            product.Quantity = product.SizeXS + product.SizeS + product.SizeM + product.SizeL + product.SizeXL + product.SizeXXL + product.SizeXXXL;
+                        }
+                        db.SaveChanges();
                     }
+                    
                     order.TotalAmount = cart.items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.TypePayment;
                     order.CreatedDate = DateTime.Now;

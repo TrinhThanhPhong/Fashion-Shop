@@ -71,6 +71,7 @@
                         <th>No</th>
                         <th>Thumbnail</th>
                         <th>Product name</th>
+                        <th>Product Type</th>
                         <th>Category</th>
                         <th>Amount</th>
                         <th>Price</th>
@@ -96,6 +97,7 @@
                         <td><img class="imgproduct" data-id="@item.Id" src="@item.ProductImage.FirstOrDefault(x => x.IsDefault).Image" width="50" /></td>
                         @*<td><img src="@item.Image" width="50" /></td>*@
                         <td>@item.Title</td>
+                        <td>@item.ProductType</td>
                         <td>@item.ProductCategory.Title</td>
                         <td>@item.Quantity</td>
                         <td>@item.Price</td>

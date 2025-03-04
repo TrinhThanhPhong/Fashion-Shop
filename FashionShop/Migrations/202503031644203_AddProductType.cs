@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addSize4 : DbMigration
+    public partial class AddProductType : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.ShoppingCartItems", "Size");
+            AddColumn("dbo.Tb_Product", "ProductType", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.ShoppingCartItems", "Size", c => c.String());
+            DropColumn("dbo.Tb_Product", "ProductType");
         }
     }
 }
