@@ -3464,6 +3464,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Hubs\Nino\connect.py" />
+    <Content Include="Hubs\Nino\demoAPI.py" />
+    <Content Include="Hubs\Nino\model.py" />
+    <Content Include="Hubs\Nino\preprocessing.py" />
+    <Content Include="Hubs\Nino\train.py" />
     <Content Include="Scripts\autoNumeric-1.8.3.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3649,6 +3654,7 @@
     <Content Include="Content\assets\plugins\moment\locales.min.js.map" />
     <Content Include="Content\assets\plugins\moment\moment-with-locales.min.js.map" />
     <Content Include="Content\assets\plugins\moment\moment.min.js.map" />
+    <Content Include="Hubs\Nino\data.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,0 +1,146 @@
+{
+    "intents":[
+      {
+        "tag": "chào hỏi",
+        "patterns":[
+          "Xin chào",
+          "hi",
+          "hello",
+          "hii",
+          "hiii",
+          "Chào"
+        ],
+        "responses":[
+          "Chào thượng đế, em là trợ lý của Sheepo. Em có thể giúp gì cho anh/chị?",
+          "Xin chào anh/chị! Em là trợ lý của Sheepo. Em có thể giúp gì cho anh/chị?"
+        ]
+      },
+      {
+        "tag": "Đổi size",
+        "patterns":[
+          "Tôi có thể đổi size nếu không vừa không?",
+          "Có thể đổi size nếu không vừa?",
+          "Có thể đổi cỡ nếu không vừa không?",
+          "Tôi có thể đổi kích cỡ nếu không vừa không?",
+          "Nếu không vừa, tôi có thể đổi hàng?",
+          "Đổi hàng nếu không vừa?",
+          "Đổi hàng"
+        ],
+        "responses":[
+          "Dạ được ạ. Nhưng anh/chị cần phải có đầy đủ hóa đơn và tag sản phẩm trên quần/áo ạ. \n Anh/chị vui lòng mang đến cửa hàng hoặc gửi ship đến cửa hàng để bên em đổi hàng cho anh chị ạ!",
+          "Nếu sản phẩm còn tag và đầy đủ hóa đơn, thì anh/chị sẽ không mất phí gì đâu ạ. \n Nhưng anh chị cần mang sản phẩm đến cửa hàng hoặc giao đến cửa hàng giúp em ạ!"
+        ]
+      },
+      {
+        "tag": "trả lại có mất phí không",
+        "patterns":[
+          "trả lại có mất tiền không?",
+          "Sẽ mất bao nhiêu tiền để trả lại hàng",
+          "trả lại sẽ mất bao nhiêu tiền?",
+          "mất bao nhiêu tiền để trả lại hàng?"
+        ],
+        "responses":[
+          "Nếu sản phẩm còn hóa đơn, tag và còn mới thì bên em sẽ nhận thu lại với giá 90%. \n Còn nếu không thì bên em sẽ không nhận thu lại ạ!"
+        ]
+      },
+      {
+        "tag": "Hỏi giá sản phẩm",
+        "patterns":[
+          "giá của áo khoác là bao nhiêu?",
+          "áo khoác giá bao nhiêu?",
+          "áo khoác giá như nào?",
+          "giá áo khoác",
+          "giá áo thun",
+          "giá áo polo Gucci?",
+          "giá quần Gucci",
+          "Áo thun có giá bao nhiêu",
+          "quần Jean giá như nào?"
+        ],
+        "responses":[
+          "Anh/chị vui lòng click vào PRODUCTS để xem chi tiết ạ!",
+          "Để xem giá và chi tiết về mặt hàng. Anh/chị vui lòng click vào PRODUCTS ạ!"
+        ]
+      },
+      {
+        "tag": "chào tạm biệt",
+        "patterns":[
+          "bai",
+          "bye",
+          "goodbye"
+        ],
+        "responses":[
+          "Rất vui vì được phục vụ cho anh/chị!",
+          "Tạm biệt, em rất vui vì được phục vụ cho anh/chị!"
+        ]
+      },
+      {
+        "tag": "Hỏi sản phẩm",
+        "patterns":[
+          "Những sản phẩm nào còn hàng?",
+          "bạn còn áo thun không?",
+          "bạn còn quần jean không?",
+          "quần jean còn không?",
+          "áo thun còn không?",
+          "quần jean còn k?",
+          "còn quần jean k?",
+          "còn áo thun k?",
+          "Shop còn áo khoác không ạ?"
+        ],
+        "responses":[
+          "Đây là những sản phẩm chúng em có:<br><br>"
+        ]
+      },
+      {
+        "tag": "sản phẩm",
+        "patterns":[
+          "bạn bán những sản phẩm nào?",
+          "bạn có những mặt hàng nào?",
+          "bạn bán những gì?",
+          "bạn có bán đồ dùng khác ngoài quần áo không?",
+          "shop bán gì",
+          "tôi có thể mua gì"
+        ],
+        "responses":[
+          "Cửa hàng em hiện đang kinh doanh quần áo. Phù hợp với mọi người từ độ tuổi 15-30.",
+          "Cửa hàng em chỉ kinh doanh quần áo cho độ tuổi từ 15-30."
+        ]
+      },
+      {
+        "tag": "vận chuyển",
+        "patterns":[
+          "hình thức vận chuyển như thế nào?",
+          "tiền ship như thế nào?",
+          "bạn có nhận ship không?",
+          "giá vận chuyển như thế nào?",
+          "tôi cách xa đây, vận chuyển được không?",
+          "giá vận chuyển ra sao?",
+          "ship được không?",
+          "tiền ship như nào?",
+          "vận chuyển như nào?",
+          "giá vận chuyển?"
+        ],
+        "responses":[
+          "Cửa hàng em miễn phí vận chuyển cho đơn hơn hàng có khoảng cách dưới 10km, trên 10km sẽ tiền ship sẽ bằng 10% tổng sản phẩm.",
+          "Cửa hàng em sẽ miễn phí tiền vận chuyển cho khách hàng có khoảng cách từ 10km đổ xuống, trên 10km sẽ tính bằng 10% tổng sản phẩm."
+        ]
+      },
+      {
+        "tag":"tư vấn",
+        "patterns":[
+          "tôi nên mặc size gì?",
+          "kích cỡ quần áo như nào thích hợp với tôi?",
+          "tư vấn giúp tôi nên chọn size nào?",
+          "tôi nên chọn kích thước như nào?",
+          "tôi nên chọn kích cỡ như nào?",
+          "kích cỡ nào phù hợp với tôi?",
+          "tư vấn size",
+          "tư vấn kích cỡ",
+          "hãy giúp tôi chọn cỡ",
+          "hãy giúp tôi chọn size"
+        ],
+        "responses":[
+          "Chiều cao 1m7 cân nặng 60 đến 70 kg thì size M sẽ phù hợp với anh/chị.\nChiều cao của anh/chị từ 1m8 trở lên, cân nặng từ 70kg thì size L sẽ phù hợp với anh/chị.\nNếu anh/chị trên 1m8 và cân nặng trên 70kg thì size XL sẽ phù hợp với anh/chị."
+        ]
+      }
+    ]
+  }

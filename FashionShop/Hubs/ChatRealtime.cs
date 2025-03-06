@@ -29,11 +29,14 @@ namespace FashionShop.Hubs
             var jsonPayload = JsonConvert.SerializeObject(payload);
             var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("http://localhost:5005/webhooks/rest/webhook", content);
+            var response = await _httpClient.PostAsync("http://127.0.0.1:8000/chat", content);
             var responseBody = await response.Content.ReadAsStringAsync();
 
             dynamic result = JsonConvert.DeserializeObject(responseBody);
-            return result.Count > 0 ? result[0].text.ToString() : "Xin lỗi, tôi không hiểu!";
+            // Kiểm tra phần response của biến result có null không, nếu không trả về giá trị response theo data. (data['response'])
+            // Biến result của mô hình Nino là dạng dữ liệu json, không phải dạng số lượng trong list hoặc dict nên không thể count, chỉ có thể trả ra giá trị yêu cầu
+            // VD: result của input:'hi' là output: {'response':'Xin chào'} -> cần lấy ra giá trị của key response.
+            return result.response != null ? result.response.ToString() : "Xin lỗi, tôi không hiểu!";
         }
         public void Hello()
         {
