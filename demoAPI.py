@@ -23,5 +23,7 @@ async def root():
 @app.post("/chat")
 async def chat_api(input_data: ChatInput):
     user_input = input_data.message
+    # response = chat(user_input)
     response = chat(user_input)
+
     return {"response": response}

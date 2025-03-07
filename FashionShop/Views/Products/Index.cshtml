@@ -2,6 +2,13 @@
 @{
     ViewBag.Title = "Products list";
 }
+<style>
+    .product_image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_styles.css">
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_responsive.css">
 <div class="container product_section_container">
@@ -12,8 +19,8 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+                    <li><a href="/Home">Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
                 </ul>
             </div>
 
@@ -28,7 +35,7 @@
                 </div>
 
                 <!-- Price Range Filtering -->
-                <div class="sidebar_section">
+                @*<div class="sidebar_section">
                     <div class="sidebar_title">
                         <h5>Filter by Price</h5>
                     </div>
@@ -39,7 +46,7 @@
                     <div class="filter_button"><span>filter</span></div>
                     <hr />
                     @Html.Action("Refresh", "Home")
-                </div>
+                </div>*@
 
                 <!-- Sizes -->
                 @*<div class="sidebar_section">
@@ -99,7 +106,8 @@
                                         <i class="fa fa-angle-down"></i>
                                         <ul class="sorting_type">
                                             <li class="type_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default Sorting</span></li>
-                                            <li class="type_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+                                            <li class="type_sorting_btn" data-isotope-option='{"sortBy": "price", "sortAscending": true}'><span>Giá tăng dần</span></li>
+                                            <li class="type_sorting_btn" data-isotope-option='{"sortBy": "price", "sortAscending": false}'><span>Giá giảm dần</span></li>
                                             <li class="type_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Product Name</span></li>
                                         </ul>
                                     </li>
@@ -150,7 +158,6 @@
                                             <img src="@strImg" alt="@item.Title">
                                         </div>
                                         <div class="favorite favorite_left"></div>
-                                        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
                                         <div class="product_info">
                                             <h6 class="product_name"><a href="/detail-product/@item.Alias-p@(item.Id)">@(item.Title.Length > 50 ? item.Title.Substring(0, 50) + "..." : item.Title)</a></h6>
                                             <h6 class="product_code" style="color: violet">Code: @item.ProductCode</h6>

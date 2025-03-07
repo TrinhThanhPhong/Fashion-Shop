@@ -41,6 +41,36 @@ namespace FashionShop.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Edit(int id)
+        {
+            var item = db.ProductCategory.Find(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProductCategory model)
+        {
+            var item = db.ProductCategory.Find(model.Id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                item.Title = model.Title;
+                item.ModifiedDate = DateTime.Now;
+                item.Alias = FashionShop.Models.common.Filter.FilterChar(model.Title);
+
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
+
         [HttpPost]
         public ActionResult Delete(int id)
         {

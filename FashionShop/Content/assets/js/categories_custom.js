@@ -313,7 +313,6 @@ jQuery(document).ready(function($)
     	var sortTypes = $('.type_sorting_btn');
     	var sortNums = $('.num_sorting_btn');
     	var sortTypesSelected = $('.sorting_type .item_sorting_btn is-checked span');
-    	var filterButton = $('.filter_button');
 
     	if($('.product-grid').length)
     	{
@@ -358,26 +357,6 @@ jQuery(document).ready(function($)
 	        	});
 	        });	
 
-	        // Filter based on the price range slider
-	        filterButton.on('click', function()
-	        {
-	        	$('.product-grid').isotope({
-		            filter: function()
-		            {
-		            	var priceRange = $('#amount').val();
-			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('$', ''));
-			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('$', ''));
-						var itemPrice = $(this).find('.input_product_price').clone().children().remove().end().text();
-
-			        	return (itemPrice > priceMin) && (itemPrice < priceMax);
-		            },
-		            animationOptions: {
-		                duration: 750,
-		                easing: 'linear',
-		                queue: false
-		            }
-		        });
-	        });
     	}
     }
 
@@ -393,8 +372,8 @@ jQuery(document).ready(function($)
 		{
 			range: true,
 			min: 0,
-			max: 100000,
-				values: [0, 100000],
+			max: 100000000,
+			values: [min, max],
 			slide: function( event, ui )
 			{
 				$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);

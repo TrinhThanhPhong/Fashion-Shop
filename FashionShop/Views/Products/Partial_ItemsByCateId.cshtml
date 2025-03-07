@@ -1,5 +1,13 @@
 ﻿
 @model IEnumerable<FashionShop.Models.EF.Product>
+    <style>
+        .product_image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+    </style>
 @if (Model != null && Model.Any())
 {
     foreach (var item in Model)
@@ -16,7 +24,6 @@
             <img src="@strImg" alt="@item.Title">
         </div>
         <div class="favorite favorite_left"></div>
-        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
         <div class="product_info">
             <h6 class="product_name"><a href="/detail-product/@item.Alias-p@(item.Id)">@(item.Title.Length > 50 ? item.Title.Substring(0, 50) + "..." : item.Title)</a></h6>
             <h6 class="product_code" style="color: violet">Code: @item.ProductCode</h6>

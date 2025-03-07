@@ -59,16 +59,38 @@ def check(conn):
 #         print("Lỗi khi truy vấn tổng số lượng theo thương hiệu:", e)
 def get_in4Product_byCode(code):
     '''
-    lấy ra mã cho sẵn (code) của sản phẩm và số lượng của + giá của mã sản phẩm đó bằng SQL
-    thiết kế hàm tương tự get_total()
-     lst_code = {
-                        'Mã sản phẩm': [],
-                        'Giá': [],
-                        'Số lượng': [],
-        }
-    
+    Lấy thông tin sản phẩm theo mã sản phẩm (code), bao gồm tên, giá và số lượng.
     '''
-    pass
+    query = """
+    SELECT Title, Quantity, Price 
+    FROM dbo.Tb_Product
+    WHERE ProductCode = ? 
+    """
+    try:
+        conn = create_connection()
+        if conn:
+            cursor = conn.cursor()
+            cursor.execute(query, (code,))  # Truyền tham số (code) vào câu truy vấn
+            row = cursor.fetchone()  # Lấy 1 dòng dữ liệu đầu tiên
+
+            if row:
+                product_in4 = {
+                    'Tên sản phẩm: ': row[0],
+                    'Tổng số lượng size: ': row[1],
+                    'Giá: ': row[2]
+                }
+                return product_in4
+            else:
+                print(f"Không tìm thấy sản phẩm với mã {code}.")
+                return None
+        else:
+            print("Không thể kết nối đến với cơ sở dữ liệu!")
+            return None
+    except Exception as e:
+        print(f"Lỗi khi truy vấn sản phẩm theo mã {code}: {e}")
+        return None
+
+
 def get_total_by_brand_and_type(conn):
     """
     Hàm hiển thị ra tổng số Quantity cho mỗi (ProductType, ProductBrand).
@@ -126,11 +148,19 @@ def get_listProducts():
         return df
         conn.close()
 
-# def get_in4code(code):
-#     conn = create_connection()
-#     if conn:
-#         df = 
+def get_in4code(code):
+    conn = create_connection()
+    if conn:
+        df = get_in4Product_byCode(code)
+        df = pd.DataFrame(df)
+        # print(df)
+        return df
+        conn.close()
 
 # Ví dụ sử dụng
+
 # if __name__ == "__main__":
-#     get_listProducts()
+#     product_in4 = get_in4Product_byCode("A002")
+#     if product_in4:
+#         print(product_in4)
+    

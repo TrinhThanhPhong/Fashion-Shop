@@ -375,6 +375,10 @@
     <Compile Include="Migrations\202503041524419_AddBrandProduct.designer.cs">
       <DependentUpon>202503041524419_AddBrandProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503071630027_EditProductCategory.cs" />
+    <Compile Include="Migrations\202503071630027_EditProductCategory.designer.cs">
+      <DependentUpon>202503071630027_EditProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3655,6 +3659,7 @@
     <Content Include="Content\assets\plugins\moment\moment-with-locales.min.js.map" />
     <Content Include="Content\assets\plugins\moment\moment.min.js.map" />
     <Content Include="Hubs\Nino\data.json" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3875,6 +3880,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503041524419_AddBrandProduct.resx">
       <DependentUpon>202503041524419_AddBrandProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503071630027_EditProductCategory.resx">
+      <DependentUpon>202503071630027_EditProductCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

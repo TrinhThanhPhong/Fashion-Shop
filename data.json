@@ -16,6 +16,41 @@
         ]
       },
       {
+        "tag": "Hỏi thông tin theo code",
+        "patterns":[
+          "Giá của mã A001 là bao nhiêu?",
+          "Mã A001 giá bao nhiêu",
+          "A001 giá như nào",
+          "A001 giá bao nhiêu",
+          "A001 còn size nào?",
+          "Thông tin về mã A001",
+          "A009",
+          "Mã A009",
+          "A002"
+        ],
+
+        "responses":[
+          "Dạ, đây là thông tin về sản phẩm ạ:<br><br>"
+        ]
+      },
+      {
+        "tag": "Hỏi sản phẩm",
+        "patterns":[
+          "Những sản phẩm nào còn hàng?",
+          "bạn còn áo thun không?",
+          "bạn còn quần jean không?",
+          "quần jean còn không?",
+          "áo thun còn không?",
+          "quần jean còn k?",
+          "còn quần jean k?",
+          "còn áo thun k?",
+          "Shop còn áo khoác không ạ?"
+        ],
+        "responses":[
+          "Đây là những sản phẩm chúng em có:<br><br>"
+        ]
+      },
+      {
         "tag": "Đổi size",
         "patterns":[
           "Tôi có thể đổi size nếu không vừa không?",
@@ -57,8 +92,8 @@
           "quần Jean giá như nào?"
         ],
         "responses":[
-          "Anh/chị vui lòng click vào PRODUCTS để xem chi tiết ạ!",
-          "Để xem giá và chi tiết về mặt hàng. Anh/chị vui lòng click vào PRODUCTS ạ!"
+          "Anh/chị vui lòng click vào PRODUCTS để xem chi tiết ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!",
+          "Để xem giá và chi tiết về mặt hàng. Anh/chị vui lòng click vào PRODUCTS ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!"
         ]
       },
       {
@@ -73,23 +108,7 @@
           "Tạm biệt, em rất vui vì được phục vụ cho anh/chị!"
         ]
       },
-      {
-        "tag": "Hỏi sản phẩm",
-        "patterns":[
-          "Những sản phẩm nào còn hàng?",
-          "bạn còn áo thun không?",
-          "bạn còn quần jean không?",
-          "quần jean còn không?",
-          "áo thun còn không?",
-          "quần jean còn k?",
-          "còn quần jean k?",
-          "còn áo thun k?",
-          "Shop còn áo khoác không ạ?"
-        ],
-        "responses":[
-          "Đây là những sản phẩm chúng em có:<br><br>"
-        ]
-      },
+      
       {
         "tag": "sản phẩm",
         "patterns":[
@@ -120,8 +139,7 @@
           "giá vận chuyển?"
         ],
         "responses":[
-          "Cửa hàng em miễn phí vận chuyển cho đơn hơn hàng có khoảng cách dưới 10km, trên 10km sẽ tiền ship sẽ bằng 10% tổng sản phẩm.",
-          "Cửa hàng em sẽ miễn phí tiền vận chuyển cho khách hàng có khoảng cách từ 10km đổ xuống, trên 10km sẽ tính bằng 10% tổng sản phẩm."
+          "Cửa hàng em miễn phí vận chuyển cho đơn hơn hàng có khoảng cách dưới 10km hoặc cho hóa đơn trên 5.000.000 vnđ, trên 10km tiền ship là 100.000 vnđ."
         ]
       },
       {
