@@ -27,11 +27,10 @@
     <td><a href="/detail-product/@item.Alias-p@(item.ProductId)">@(item.ProductName.Length > 50 ? item.ProductName.Substring(0, 50) + "..." : item.ProductName)</a></td>
     <td>@item.CategoryName</td>
     <td>@Common.FormatNumber(item.Price, 0)</td>
-    <td><input type="number" class="form-control" id="Quantity_@item.ProductId" value="@item.Quantity" /></td>
+    <td>@item.Quantity</td>
     <th>@Common.FormatNumber(item.TotalPrice, 2)</th>
     <td>
         <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Delete</a>
-        <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-success btnUpdate">Update</a>
     </td>
 </tr>
             i++;

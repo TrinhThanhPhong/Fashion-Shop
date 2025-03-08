@@ -79,7 +79,7 @@
         ]
       },
       {
-        "tag": "Hỏi giá sản phẩm",
+        "tag": "Hỏi giá + size sản phẩm",
         "patterns":[
           "giá của áo khoác là bao nhiêu?",
           "áo khoác giá bao nhiêu?",
@@ -89,7 +89,10 @@
           "giá áo polo Gucci?",
           "giá quần Gucci",
           "Áo thun có giá bao nhiêu",
-          "quần Jean giá như nào?"
+          "quần Jean giá như nào?",
+          "Áo thun trắng có những size gì",
+          "áo thun đen có những cỡ nào?",
+          "áo thun đen có cỡ gì?"
         ],
         "responses":[
           "Anh/chị vui lòng click vào PRODUCTS để xem chi tiết ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!",
@@ -143,6 +146,23 @@
         ]
       },
       {
+        "tag": "Thời gian vận chuyển",
+        "patterns":[
+          "Thời gian vận chuyển là bao lâu?",
+          "Mất bao lâu để tôi có thể nhận được hàng?",
+          "bao lâu sẽ nhận được hàng?",
+          "thời gian giao hàng?",
+          "Thời gian giao hàng là bao lâu?",
+          "mấy hôm tôi sẽ nhận được đơn đặt hàng của mình?",
+          "mấy hôm sẽ nhận được hàng",
+          "thời gian vận chuyển là bao lâu?",
+          "bao lâu vận chuyển sẽ giao cho tôi?"
+        ],
+        "responses":[
+          "Giao hàng tiêu chuẩn thì sẽ mất khoảng 3-5 ngày anh/chị sẽ nhận được hàng ạ."
+        ]
+      },
+      {
         "tag":"tư vấn",
         "patterns":[
           "tôi nên mặc size gì?",
@@ -157,7 +177,7 @@
           "hãy giúp tôi chọn size"
         ],
         "responses":[
-          "Chiều cao 1m7 cân nặng 60 đến 70 kg thì size M sẽ phù hợp với anh/chị.\nChiều cao của anh/chị từ 1m8 trở lên, cân nặng từ 70kg thì size L sẽ phù hợp với anh/chị.\nNếu anh/chị trên 1m8 và cân nặng trên 70kg thì size XL sẽ phù hợp với anh/chị."
+          "Chiều cao 1m7 cân nặng 60 đến 70 kg thì size M sẽ phù hợp với anh/chị.\n Chiều cao của anh/chị từ 1m8 trở lên, cân nặng từ 70kg thì size L sẽ phù hợp với anh/chị. \n Nếu anh/chị trên 1m8 và cân nặng trên 70kg thì size XL sẽ phù hợp với anh/chị."
         ]
       }
     ]
