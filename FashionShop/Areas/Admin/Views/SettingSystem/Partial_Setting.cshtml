@@ -25,31 +25,31 @@
             <div class="card">
                 <div class="card-header p-2">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">General information</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông tin chung</a></li>
                         @*<li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Hình ảnh</a></li>*@
-                        <li class="nav-item"><a class="nav-link" href="#settingSeo" data-toggle="tab">SEO</a></li>
+                        @*<li class="nav-item"><a class="nav-link" href="#settingSeo" data-toggle="tab">SEO</a></li>*@
                     </ul>
                 </div><!-- /.card-header -->
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="active tab-pane" id="activity">
                             <div class="form-group">
-                                <label>Page Title</label>
+                                <label>Tên page</label>
                                 <input type="text" name="SettingTitle" class="form-control" value="@SettingHelper.GetValue("SettingTitle")" />
                             </div>
                             <div class="form-group">
-                                <label>Logo</label>
+                                <label>Biểu tượng</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="text" value="@SettingHelper.GetValue("SettingLogo")" name="SettingLogo" id="txtSettingLogo" class="form-control" />
                                     </div>
                                     <div class="input-group-append">
-                                        <input type="button" value="Upload Images" onclick="BrowseServer('txtSettingLogo');" />
+                                        <input type="button" value="Tải ảnh lên" onclick="BrowseServer('txtSettingLogo');" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Hotline</label>
+                                <label>Đường dây nóng</label>
                                 <input type="text" value="@SettingHelper.GetValue("SettingHotline")" name="SettingHotline" class="form-control" />
                             </div>
                             <div class="form-group">
@@ -58,27 +58,13 @@
                             </div>
 
                         </div>
-                        <div class="tab-pane" id="settingSeo">
-                            <div class="form-group">
-                                <label>SEO Title</label>
-                                <input type="text" value="@SettingHelper.GetValue("SettingTitleSeo")" name="SettingTitleSeo" class="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <label>SEO Description</label>
-                                <textarea name="SettingDesSeo" class="form-control" rows="3">@SettingHelper.GetValue("SettingDesSeo")</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>SEO Keyword</label>
-                                <textarea name="SettingKeySeo" class="form-control" rows="3">@SettingHelper.GetValue("SettingKeySeo")</textarea>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-12">
             <div>
-                <button type="submit" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Lưu</button>
             </div>
         </div>
     </div>

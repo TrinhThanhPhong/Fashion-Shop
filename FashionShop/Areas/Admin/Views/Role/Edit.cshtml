@@ -2,7 +2,7 @@
 @model IdentityRole
 
 @{
-    ViewBag.Title = "Edit Permission";
+    ViewBag.Title = "Phân quyền";
 }
 
 @section naviheader {
@@ -11,10 +11,13 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/Admin/Role" class="nav-link">@ViewBag.Title</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Chỉnh sửa</a>
         </li>
     </ul>
 }
@@ -24,7 +27,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Edit Permission</h3>
+            <h3 class="card-title">Cập nhật quyền</h3>
         </div>
         <div class="card-body">
             @using (Html.BeginForm("Edit", "Role", FormMethod.Post))
@@ -33,11 +36,11 @@
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(x => x.Id)
                 <div class="form-group">
-                    <label>Permission name</label>
+                    <label>Tên quyền</label>
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
                 </div>
             }
         </div>

@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity.EntityFramework
 @model IEnumerable<IdentityRole>
 @{
-    ViewBag.Title = "Permissions";
+    ViewBag.Title = "Phân quyền";
 }
 
 @section naviheader {
@@ -10,10 +10,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/RevenueStatistical/index" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Category" class="nav-link">@ViewBag.Title List</a>
+            <a href="/Admin/Role" class="nav-link">@ViewBag.Title</a>
         </li>
     </ul>
 }
@@ -24,10 +24,10 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Permissions list</h3>
+            <h3 class="card-title">Danh sách quyền</h3>
 
             <div class="card-tools">
-                <a href="/Admin/Role/Create" class="btn btn-success">Add</a>
+                <a href="/Admin/Role/Create" class="btn btn-success">Thêm</a>
             </div>
         </div>
         <div class="card-body">
@@ -35,7 +35,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -50,8 +50,16 @@
                                 <td>@i</td>
                                 <td>@item.Name</td>
                                 <td>
-                                    <a href="/Admin/Role/edit/@item.Id" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Delete</a>
+                                    @if (@item.Name == "Admin")
+                                    {
+                                        <a>Role này quan trọng nên không thể thao tác hay chỉnh sửa</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/Admin/Role/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                                    }
+
                                 </td>
                             </tr>
                             i++;

@@ -1583,7 +1583,6 @@
     <Content Include="Content\clients\dist\css\alt\adminlte.pages.min.css" />
     <Content Include="Content\clients\dist\css\alt\adminlte.plugins.css" />
     <Content Include="Content\clients\dist\css\alt\adminlte.plugins.min.css" />
-    <Content Include="Content\clients\dist\img\AdminLTELogo.png" />
     <Content Include="Content\clients\dist\img\avatar.png" />
     <Content Include="Content\clients\dist\img\avatar2.png" />
     <Content Include="Content\clients\dist\img\avatar3.png" />
@@ -1616,6 +1615,7 @@
     <Content Include="Content\clients\dist\img\user6-128x128.jpg" />
     <Content Include="Content\clients\dist\img\user7-128x128.jpg" />
     <Content Include="Content\clients\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\clients\dist\img\logo.png" />
     <Content Include="Content\clients\dist\js\adminlte.js" />
     <Content Include="Content\clients\dist\js\adminlte.min.js" />
     <Content Include="Content\clients\dist\js\demo.js" />

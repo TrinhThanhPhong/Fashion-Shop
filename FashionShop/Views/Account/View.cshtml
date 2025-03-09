@@ -11,10 +11,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/RevenueStatistical/index" class="nav-link">Home</a>
+            <a href="/Home" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Purchase History Detail</a>
+            <a href="#" class="nav-link">Lịch sử mua hàng</a>
         </li>
     </ul>
 }
@@ -26,19 +26,19 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Purchase History Detail</h3>
+            <h3 class="card-title">Chi tiết lịch sử mua hàng</h3>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Order Code</label>
+                        <label>Mã đơn hàng</label>
                         <p class="form-control">@Model.Code</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Customer Name</label>
+                        <label>Tên khách hàng</label>
                         <p class="form-control">@Model.CustomerName</p>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Total Price</label>
+                        <label>Tổng chi phí</label>
                         <p class="form-control">$ @FashionShop.Models.common.Common.FormatNumber(Model.TotalAmount, 0)</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Customer Phone</label>
+                        <label>Số điện thoại</label>
                         <p class="form-control">@Model.Phone</p>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Created Date</label>
+                        <label>Ngày mua</label>
                         <p class="form-control">@Model.CreatedDate.ToString("dd/MM/yyyy")</p>
                     </div>
                 </div>
@@ -77,8 +77,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Status</label>
-                        <p class="form-control">@(Model.TypePayment == 1 ? "Not yet paid" : "Paid")</p>
+                        <label>Tình trạng</label>
+                        <p class="form-control">@(Model.TypePayment == 1 ? "Chờ thanh toán" : "Đã thanh toán")</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -91,7 +91,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h2>Products List</h2>
+                    <h2>Danh sách sản phẩm</h2>
                 </div>
                 <div class="col-12">
                     @Html.Action("Partial_Products", "Account", new { id = Model.Id })

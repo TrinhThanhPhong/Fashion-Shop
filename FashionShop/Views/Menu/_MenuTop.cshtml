@@ -5,9 +5,21 @@
 <ul class="navbar_menu">
     @foreach (var item in Model)
     {
-        if(item.Alias.Equals("home-page"))
+        if(item.Alias.Equals("trang-chu"))
         {
             item.Alias = "";
+        }
+        if(item.Alias.Equals("tin-tuc"))
+        {
+            item.Alias = "news";
+        }
+        if (item.Alias.Equals("san-pham"))
+        {
+            item.Alias = "products";
+        }
+        if (item.Alias.Equals("lien-he"))
+        {
+            item.Alias = "contact";
         }
         <li><a href="/@item.Alias">@item.Title</a></li>
     }

@@ -1,6 +1,6 @@
 ﻿@model FashionShop.Models.EF.Product
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Thêm sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,34 +10,16 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Products" class="nav-link">Products</a>
+            <a href="/Admin/Products" class="nav-link">Sản phẩm</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Add</a>
+            <a href="#" class="nav-link">Thêm</a>
         </li>
     </ul>
 }
-
-
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Add product</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Products</a></li>
-                    <li class="breadcrumb-item active">Add</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
 
 <!-- Main content -->
 <section class="content">
@@ -45,7 +27,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">New information product</h3>
+            <h3 class="card-title">Thông tin sản phẩm</h3>
 
 
         </div>
@@ -59,8 +41,8 @@
                         <div class="card">
                             <div class="card-header p-2">
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">General information</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Images</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông tin chung</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Ảnh</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">SEO</a></li>
                                 </ul>
                             </div><!-- /.card-header -->
@@ -68,48 +50,43 @@
                                 <div class="tab-content">
                                     <div class="active tab-pane" id="activity">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Product name</label>
-                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Product name" })
+                                            <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tên sản phẩm" })
                                             @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Product Type</label>
-                                            @Html.TextBoxFor(x => x.ProductType, new { @class = "form-control", @placeholder = "Product type" })
+                                            <label for="exampleInputEmail1">Loại sản phẩm</label>
+                                            @Html.TextBoxFor(x => x.ProductType, new { @class = "form-control", @placeholder = "Loại sản phẩm" })
                                             @Html.ValidationMessageFor(x => x.ProductType, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Brand</label>
-                                            @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control", @placeholder = "Brand" })
+                                            <label for="exampleInputEmail1">Thương hiệu</label>
+                                            @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control", @placeholder = "Thương hiệu" })
                                             @Html.ValidationMessageFor(x => x.ProductBrand, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Alias</label>
-                                            @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
-                                            @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">SKU</label>
-                                            @Html.TextBoxFor(x => x.ProductCode, new { @class = "form-control", @placeholder = "Product code" })
+                                            <label for="exampleInputEmail1">Mã sản phẩm</label>
+                                            @Html.TextBoxFor(x => x.ProductCode, new { @class = "form-control", @placeholder = "Mã sản phẩm" })
                                             @Html.ValidationMessageFor(x => x.ProductCode, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Category</label>
-                                            @Html.DropDownListFor(x => x.ProductCategoryId, ViewBag.ProductCategory as SelectList, "-Select product category-", new { @class = "form-control", @placeholder = "Description" })
+                                            <label for="exampleInputEmail1">Danh mục sản phẩm</label>
+                                            @Html.DropDownListFor(x => x.ProductCategoryId, ViewBag.ProductCategory as SelectList, "-Chọn danh mục sản phẩm-", new { @class = "form-control", @placeholder = "Chi tiết" })
                                             @Html.ValidationMessageFor(x => x.ProductCategoryId, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Description</label>
-                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Description" })
+                                            <label for="exampleInputEmail1">Mô tả</label>
+                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Mô tả sản phẩm" })
                                             @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Detail</label>
+                                            <label for="exampleInputEmail1">Chi tiết sản phẩm</label>
                                             @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" })
                                             @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
                                         </div>
                                         @* ---------------------------------------Size--------------------------------------------------- *@
                                         <div class="row" style="display: flex; justify-content:space-evenly; align-items: center;">
-                                            <label for="exampleInputEmail1">Size:</label>
+                                            <label for="exampleInputEmail1">Kích cỡ:</label>
                                             <div class="col-1">
                                                 <div class="form-group" style="display:flex; flex-direction: column; align-items: center;">
                                                     <label for="exampleInputEmail1">XS</label>
@@ -171,27 +148,27 @@
             </div>*@
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Price</label>
-                                                    <input type="text" name="demoPrice" id="demoPrice" value="0" class="form-control auto" data-a-dec="," data-a-sep="." />
-                                                    @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Price" })
+                                                    <label for="exampleInputEmail1">Giá</label>
+                                                    <input type="text" name="demoPrice" id="demoPrice" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Giá" })
                                                     @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
 
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Price Discount</label>
-                                                    <input type="text" name="demoPriceSale" id="demoPriceSale" value="0" class="form-control auto" data-a-dec="," data-a-sep="." />
-                                                    @Html.HiddenFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Price Discount" })
+                                                    <label for="exampleInputEmail1">Giá khuyến mãi</label>
+                                                    <input type="text" name="demoPriceSale" id="demoPriceSale" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    @Html.HiddenFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Giá khuyến mãi" })
                                                     @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
 
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Original Price</label>
-                                                    <input type="text" name="demoOriginalPrice" id="demoOriginalPrice" value="0" class="form-control auto" data-a-dec="," data-a-sep="." />
-                                                    @Html.HiddenFor(x => x.OriginalPrice, new { @class = "form-control", @placeholder = "Original Price" })
+                                                    <label for="exampleInputEmail1">Giá nhập</label>
+                                                    <input type="text" name="demoOriginalPrice" id="demoOriginalPrice" class="form-control auto" data-a-dec="," data-a-sep="." />
+                                                    @Html.HiddenFor(x => x.OriginalPrice, new { @class = "form-control", @placeholder = "Giá nhập" })
                                                     @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
@@ -202,7 +179,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         @Html.CheckBoxFor(x => x.IsActive, new { @class = "input-control-label", @id = "customCheckbox2", @checked = "checked" })
-                                                        <label for="customCheckbox2">Display</label>
+                                                        <label for="customCheckbox2">Hiển thị</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -210,7 +187,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         @Html.CheckBoxFor(x => x.IsHot, new { @class = "input-control-label", @id = "IsHotCheckbox" })
-                                                        <label for="IsHotCheckbox">Hot product</label>
+                                                        <label for="IsHotCheckbox">Hot</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -219,7 +196,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         @Html.CheckBoxFor(x => x.IsFeature, new { @class = "input-control-label", @id = "IsFeatureCheckbox" })
-                                                        <label for="IsFeatureCheckbox">Feature</label>
+                                                        <label for="IsFeatureCheckbox">Đặc sắc</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +205,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         @Html.CheckBoxFor(x => x.IsSale, new { @class = "input-control-label", @id = "IsSaleCheckbox" })
-                                                        <label for="IsSaleCheckbox">Sale</label>
+                                                        <label for="IsSaleCheckbox">Giảm giá</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,16 +216,16 @@
                                     <div class="tab-pane" id="timeline">
                                         <div class="row">
                                             <div class="col-md-12 text-right">
-                                                <input type="button" class="btn btn-primary" id="iUpload" onclick="BrowseServer();" value="Upload"/>
+                                                <input type="button" class="btn btn-primary" id="iUpload" onclick="BrowseServer();" value="Tải lên"/>
                                             </div>
                                             <div class="col-md-12">
                                                 <table class="table table-hover" id="tbProductImage">
                                                     <thead>
                                                         <tr>
                                                             <th class="text-center">#</th>
-                                                            <th class="text-center">Image</th>
-                                                            <th class="text-center">Avatar</th>
-                                                            <th class="text-center">Activity</th>
+                                                            <th class="text-center">Ảnh</th>
+                                                            <th class="text-center">Ảnh đại diện</th>
+                                                            <th class="text-center">Thao tác</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="tbHtml">
@@ -264,23 +241,23 @@
                                     <div class="tab-pane" id="settings">
                                         <form class="form-horizontal">
                                             <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">SEO Title</label>
+                                                <label for="inputName" class="col-sm-2 col-form-label">Tiêu đề SEO</label>
                                                 <div class="col-sm-10">
-                                                    @Html.TextBoxFor(x => x.SeoTitle, new { @class = "form-control", @placeholder = "Seo Title" })
+                                                    @Html.TextBoxFor(x => x.SeoTitle, new { @class = "form-control", @placeholder = "Tiêu đề SEO" })
                                                     @Html.ValidationMessageFor(x => x.SeoTitle, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="inputEmail" class="col-sm-2 col-form-label">Seo Keywords</label>
+                                                <label for="inputEmail" class="col-sm-2 col-form-label">Từ khóa SEO</label>
                                                 <div class="col-sm-10">
-                                                    @Html.TextBoxFor(x => x.SeoKeywords, new { @class = "form-control", @placeholder = "Seo Keywords" })
+                                                    @Html.TextBoxFor(x => x.SeoKeywords, new { @class = "form-control", @placeholder = "Từ khóa SEO" })
                                                     @Html.ValidationMessageFor(x => x.SeoKeywords, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="inputName2" class="col-sm-2 col-form-label">Seo Description</label>
+                                                <label for="inputName2" class="col-sm-2 col-form-label">Mô tả SEO</label>
                                                 <div class="col-sm-10">
-                                                    @Html.TextBoxFor(x => x.SeoDescription, new { @class = "form-control", @placeholder = "Seo Description" })
+                                                    @Html.TextBoxFor(x => x.SeoDescription, new { @class = "form-control", @placeholder = "Mô tả SEO" })
                                                     @Html.ValidationMessageFor(x => x.SeoDescription, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
@@ -292,8 +269,8 @@
                             </div><!-- /.card-body -->
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Add</button>
-                                <a href="/Admin/Products" class="btn btn-danger">Back</a>
+                                <button type="submit" class="btn btn-success">Thêm</button>
+                                <a href="/Admin/Products" class="btn btn-danger">Quay lại</a>
                             </div>
                         </div>
                     }
@@ -336,7 +313,7 @@
             });
 
             $('body').on('click', '.btnDeleteImage', function () {
-                var conf = confirm('Are you sure to delete this image?');
+                var conf = confirm('Bạn có chắc muốn xóa ảnh này?');
                 if (conf === true) {
                     var _id = $(this).data('id');
                     $('#trow_' + _id).fadeTo('fast', 0.5, function () {
@@ -368,14 +345,14 @@
                     <td class="text-center">${currentId}</td>
                     <td class="text-center"><img width="80" src="${url}"><input type="hidden" value="${url}" name="Images"/></td>
                     <td class="text-center"><input type="radio" name="rdDefault" value="${currentId}" ckecked="checked"/></td>
-                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnDeleteImage">Delete</a></td>
+                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnDeleteImage">Xóa</a></td>
                   </tr>`;
             } else {
                 str += `<tr id="trow_${currentId}">
                     <td class="text-center">${currentId}</td>
                     <td class="text-center"><img width="80" src="${url}"><input type='hidden' value="${url}" name="Images"/></td>
                     <td class="text-center"><input type="radio" name="rdDefault" value="${currentId}"/></td>
-                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnDeleteImage">Delete</a></td>
+                    <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnDeleteImage">Xóa</a></td>
                   </tr>`;
             }
             

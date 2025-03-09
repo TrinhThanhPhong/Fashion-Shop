@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<FashionShop.Models.EF.ProductImage>
 @{
-    ViewBag.Title = "Product Images";
+    ViewBag.Title = "Ảnh sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutEmpty.cshtml";
 }
 
@@ -32,11 +32,11 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Product images management</h3>
+            <h3 class="card-title">Quản lý ảnh sản phẩm</h3>
 
             <div class="card-tools">
-                <input type="button" value="Upload" class="btn btn-success" onclick="BrowseServer('txtImage');" />
-                <button type="button" class="btn btn-danger" title="Collapse">Delete all</button>
+                <input type="button" value="Tải lên" class="btn btn-success" onclick="BrowseServer('txtImage');" />
+                <button type="button" class="btn btn-danger" title="Collapse">Xóa tất cả</button>
             </div>
         </div>
         <div class="card-body">
@@ -102,7 +102,7 @@
     $(document).ready(function () {
         $('body').on('click', '.btnDelete', function () {
             var id = $(this).data('id');
-            var conf = confirm('Are you sure to delete this image?');
+            var conf = confirm('Bạn có chắc muốn xóa ảnh này?');
             if (conf === true) {
                 $.ajax({
                     url: '/Admin/ProductImages/Delete',

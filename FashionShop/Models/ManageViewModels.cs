@@ -47,18 +47,18 @@ namespace FashionShop.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Mật khẩu hiện tại")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Mật khẩu mới phải có ít nhất {2} kí tự.", MinimumLength = 8)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Mật khẩu mới")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Xác nhận mật khẩu")]
+        [Compare("NewPassword", ErrorMessage = "Mật khẩu không trùng khớp.")]
         public string ConfirmPassword { get; set; }
     }
 

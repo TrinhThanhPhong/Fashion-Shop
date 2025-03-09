@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<FashionShop.Models.EF.ProductCategory>
 @{
-    ViewBag.Title = "Product Category";
+    ViewBag.Title = "Danh mục sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,30 +10,13 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/RevenueStatistical/index" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/productcategory" class="nav-link">@ViewBag.Title List</a>
+            <a href="/Admin/productcategory" class="nav-link">@ViewBag.Title</a>
         </li>
     </ul>
 }
-
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Product category management</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">@ViewBag.Title</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
 
 <!-- Main content -->
 <section class="content">
@@ -41,11 +24,11 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">@ViewBag.Title List</h3>
+            <h3 class="card-title">Danh sách danh mục sản phẩm</h3>
 
             <div class="card-tools">
-                <a href="/Admin/ProductCategory/Add" class="btn btn-primary">Add</a>
-                <a href="#" class="btn btn-danger" id="btn-DeleteAll">Delete</a>
+                <a href="/Admin/ProductCategory/Add" class="btn btn-primary">Thêm</a>
+                <a href="#" class="btn btn-danger" id="btn-DeleteAll">Xóa</a>
             </div>
         </div>
         <div class="card-body">
@@ -54,9 +37,9 @@
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="SelectAll" /></th>
-                        <th>No</th>
-                        <th>New Title</th>
-                        <th>Date created</th>
+                        <th>STT</th>
+                        <th>Tên danh mục sản phẩm</th>
+                        <th>Ngày tạo</th>
                         @*<th>Display</th>*@
                         <th style="width:150px;"></th>
                     </tr>
@@ -77,8 +60,8 @@
                                     <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
                                 </td>*@
                                 <td>
-                                    <a href="/Admin/productcategory/edit/@item.Id" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Delete</a>
+                                    <a href="/Admin/productcategory/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
                             </tr>
                             i++;
@@ -87,7 +70,7 @@
                     else
                     {
                         <tr>
-                            <td colspan="4">No records found!!!</td>
+                            <td colspan="4">Hiện không có danh mục sản phẩm nào!!!</td>
                         </tr>
                     }
                 </tbody>
@@ -129,7 +112,7 @@
                     }
                 });
                 if (str.length > 0) {
-                    var conf = confirm('Are you sure to delete this records?');
+                    var conf = confirm('Bạn có chắc muốn xóa tất cả những danh mục sản phẩm này?');
                     if (conf === true) {
                         $.ajax({
                             url: '/Admin/news/DeleteAll',
@@ -160,7 +143,7 @@
 
             $('body').on('click', '.btnDelete', function () {
                 var id = $(this).data("id");
-                var conf = confirm('Are you sure to delete this record?');
+                var conf = confirm('Bạn có chắc muốn xóa danh mục này?');
                 if (conf === true) {
                     $.ajax({
                         url: '/admin/ProductCategory/delete',

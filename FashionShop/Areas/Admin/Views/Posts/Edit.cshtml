@@ -1,6 +1,6 @@
 ﻿@model  FashionShop.Models.EF.Posts
 @{
-    ViewBag.Title = "Update post";
+    ViewBag.Title = "Cập nhật bài viết";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,34 +10,16 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Posts" class="nav-link">Posts</a>
+            <a href="/Admin/Posts" class="nav-link">Bài viết</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Update</a>
+            <a href="#" class="nav-link">Cập nhật</a>
         </li>
     </ul>
 }
-
-
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Add posts</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Posts</a></li>
-                    <li class="breadcrumb-item active">Update</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
 
 <!-- Main content -->
 <section class="content">
@@ -45,7 +27,7 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Update information post</h3>
+            <h3 class="card-title">Cập nhật thông tin bài viết</h3>
 
 
         </div>
@@ -63,50 +45,50 @@
                         <!-- your steps content here -->
                         <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Title:</label>
-                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Title" })
+                                <label for="exampleInputEmail1">Tiêu đề</label>
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tiêu đề" })
                                 @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Thumbnail</label>
+                                <label for="exampleInputFile">Ảnh thu nhỏ</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         @Html.TextBoxFor(x => x.Image, new { @id = "txtImage", @class = "form-control" })
                                     </div>
                                     <div class="input-group-append">
-                                        <input type="button" value="Upload" onclick="BrowseServer('txtImage');" />
+                                        <input type="button" value="Tải lên" onclick="BrowseServer('txtImage');" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Description</label>
+                                <label for="exampleInputPassword1">Mô tả</label>
                                 @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Detail</label>
+                                <label for="exampleInputPassword1">Chi tiết</label>
                                 @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" })
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Display</label>
+                                <label for="exampleInputPassword1">Hiển thị</label>
                                 @Html.CheckBoxFor(x => x.IsActive)
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Seo Title</label>
+                                <label for="exampleInputPassword1">Tiêu đề SEO</label>
                                 @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Seo Description</label>
+                                <label for="exampleInputPassword1">Mô tả SEO</label>
                                 @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control" })
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Seo Keywords</label>
+                                <label for="exampleInputPassword1">Từ khóa SEO</label>
                                 @Html.TextAreaFor(x => x.SeoKeywords, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <a href="/Admin/posts" class="btn btn-danger">Back</a>
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <a href="/Admin/posts" class="btn btn-danger">Quay lại</a>
                             </div>
                         </div>
 

@@ -2,7 +2,7 @@
 @using PagedList.Mvc;
 @using PagedList;
 @{
-    ViewBag.Title = "News";
+    ViewBag.Title = "Tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,30 +12,13 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/RevenueStatistical/index" class="nav-link">Home</a>
+            <a href="/Admin/RevenueStatistical/index" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/Admin/Category" class="nav-link">@ViewBag.Title List</a>
+            <a href="/Admin/Category" class="nav-link">Quản lý @ViewBag.Title</a>
         </li>
     </ul>
 }
-
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>News management</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">@ViewBag.Title</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
 
 <!-- Main content -->
 <section class="content">
@@ -43,11 +26,11 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">@ViewBag.Title List</h3>
+            <h3 class="card-title">Danh sách @ViewBag.Title</h3>
 
             <div class="card-tools">
-                <a href="/Admin/News/Add" class="btn btn-primary">Add</a>
-                <a href="#" class="btn btn-danger" id="btn-DeleteAll">Delete</a>
+                <a href="/Admin/News/Add" class="btn btn-primary">Thêm</a>
+                <a href="#" class="btn btn-danger" id="btn-DeleteAll">Xóa</a>
             </div>
         </div>
         <div class="card-body">
@@ -58,7 +41,7 @@
                         <div class="input-group input-group-sm">
                             @Html.TextBox("Searchtext", null, new { @class = "form-control" })
                             <span class="input-group-append">
-                                <button type="submit" class="btn btn-info btn-flat">Search</button>
+                                <button type="submit" class="btn btn-info btn-flat">Tìm</button>
                             </span>
                         </div>
                     }
@@ -68,11 +51,11 @@
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="SelectAll" /></th>
-                        <th>No</th>
-                        <th>Thumbnail</th>
-                        <th>New Title</th>
-                        <th>Date created</th>
-                        <th>Display</th>
+                        <th>STT</th>
+                        <th>Ảnh thu nhỏ</th>
+                        <th>Tiêu đề</th>
+                        <th>Ngày tạo</th>
+                        <th>Hiển thị</th>
                         <th style="width:150px;"></th>
                     </tr>
                 </thead>
@@ -93,8 +76,8 @@
                                     <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
                                 </td>
                                 <td>
-                                    <a href="/Admin/news/edit/@item.Id" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Delete</a>
+                                    <a href="/Admin/news/edit/@item.Id" class="btn btn-sm btn-primary">Sửa </a>
+                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
                             </tr>
                             i++;
@@ -103,7 +86,7 @@
                     else
                     {
                         <tr>
-                            <td colspan="4">No records found!!!</td>
+                            <td colspan="4">Hiện tại không có tin tức nào!!!</td>
                         </tr>
                     }
                 </tbody>
@@ -154,7 +137,7 @@
                     }
                 });
                 if (str.length > 0) {
-                    var conf = confirm('Are you sure to delete this records?');
+                    var conf = confirm('Bạn có chắc muốn xóa những tin tức này?');
                     if (conf === true) {
                         $.ajax({
                             url: '/Admin/news/DeleteAll',
@@ -185,7 +168,7 @@
 
             $('body').on('click', '.btnDelete', function () {
                 var id = $(this).data("id");
-                var conf = confirm('Are you sure to delete this record?');
+                var conf = confirm('Bạn có chắc muốn xóa tin này?');
                 if (conf === true) {
                     $.ajax({
                         url: '/admin/news/delete',

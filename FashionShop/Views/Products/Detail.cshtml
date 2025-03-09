@@ -1,6 +1,6 @@
 ﻿@model FashionShop.Models.EF.Product
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Chi tiết";
 }
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_styles.css">
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/single_responsive.css">
@@ -57,7 +57,7 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Trang chủ</a></li>
                         <li><a href="/Product-Categories/@Model.ProductCategory.Alias-@Model.ProductCategoryId"><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.ProductCategory.Title</a></li>
                         <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.Title</a></li>
                     </ul>
@@ -104,9 +104,9 @@
                     <div class="product_details_title">
                         <h2>@Model.Title</h2>
                         <p>@Model.Description</p>
-                        <p>Views: <b>@Model.ViewCount</b></p>
-                        <p>Remaining: <b>@Model.Quantity</b></p>
-                        <p>Brand: <b>@Model.ProductBrand</b></p>
+                        <p>Lượt xem: <b>@Model.ViewCount</b></p>
+                        <p>Kho: <b>@Model.Quantity</b></p>
+                        <p>Thương hiệu: <b>@Model.ProductBrand</b></p>
                         <div class="divSizeRemaining">
                             <p id="sizeRemaining">XS: <b>@Model.SizeXS</b></p>
                             <p id="sizeRemaining">S: <b>@Model.SizeS</b></p>
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                        <span>Quantity:</span>
+                        <span>Số lượng:</span>
                         <div class="quantity_selector">
                             <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
                             <span id="quantity_value">0</span>
@@ -170,11 +170,11 @@
                         </div>
                         @if (Model.Quantity == 0)
                         {
-                            <div class="red_button add_to_cart_button" style="color: white;">Out of stock</div>
+                            <div class="red_button add_to_cart_button" style="color: white;">Hết hàng</div>
                         }
                         else
                         {
-                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@Model.Id">add to cart</a></div>
+                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@Model.Id">Thêm vào giỏ hàng</a></div>
                         }
 
                         <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
@@ -191,8 +191,8 @@
                 <div class="col">
                     <div class="tabs_container">
                         <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
-                            <li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
-                            <li class="tab" data-active-tab="tab_3"><span>Reviews (@ViewBag.CountReview)</span></li>
+                            <li class="tab active" data-active-tab="tab_1"><span>Mô tả sản phẩm</span></li>
+                            <li class="tab" data-active-tab="tab_3"><span>Đánh giá (@ViewBag.CountReview)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                         <div class="row">
                             <div class="col-lg-5 desc_col">
                                 <div class="tab_title">
-                                    <h4>Description</h4>
+                                    <h4>Mô tả</h4>
                                 </div>
                                 @Html.Raw(Model.Detail)
                             </div>

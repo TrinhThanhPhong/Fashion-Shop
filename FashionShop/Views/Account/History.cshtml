@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<FashionShop.Models.EF.Order>
 @{
-    ViewBag.Title = "Purchase History";
+    ViewBag.Title = "Lịch sử mua hàng";
 }
 <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
 <style>
@@ -11,19 +11,19 @@
 <div class="container news-section-container">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Purchase History List</h3>
+            <h3 class="card-title">Danh sách lịch sử mua hàng</h3>
         </div>
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Order code</th>
-                        <th>Customer name</th>
-                        <th>Phone</th>
-                        <th>Bill</th>
-                        <th>Status</th>
-                        <th>Created date</th>
+                        <th>Mã đơn hàng</th>
+                        <th>Tên người mua</th>
+                        <th>Số điện thoại</th>
+                        <th>Tổng chi phí</th>
+                        <th>Tình trạng</th>
+                        <th>Ngày mua</th>
                         <th></th>
                     </tr>
                 </thead>
