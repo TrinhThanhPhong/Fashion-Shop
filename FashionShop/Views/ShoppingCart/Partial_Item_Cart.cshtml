@@ -3,13 +3,13 @@
 
 <table class="table">
     <tr class="text-center">
-        <th>No</th>
-        <th>Product Image</th>
-        <th>Product Name</th>
-        <th>Category Name</th>
-        <th>Product Price</th>
-        <th style="width: 100px;">Product Amount</th>
-        <th>Total Price</th>
+        <th>STT</th>
+        <th>Ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Danh mục</th>
+        <th>Giá</th>
+        <th style="width: 100px;">Số lượng</th>
+        <th>Tổng</th>
         <th style="width: 200px;">
 
         </th>
@@ -30,13 +30,13 @@
     <td>@item.Quantity</td>
     <th>@Common.FormatNumber(item.TotalPrice, 2)</th>
     <td>
-        <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Delete</a>
+        <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>
     </td>
 </tr>
             i++;
         }
         <tr class="text-right">
-            <th colspan="6">Total Price: </th>
+            <th colspan="6">Tổng tiền: </th>
             <th>@Common.FormatNumber(totalPrice, 0)</th>
             <th></th>
         </tr>
@@ -44,7 +44,7 @@
     else
     {
         <tr>
-            <th colspan="7">Don't have product in the cart!!!</th>
+            <th colspan="7">Không có sản phẩm nào trong giỏ hàng!!!</th>
         </tr>
     }
 </table>

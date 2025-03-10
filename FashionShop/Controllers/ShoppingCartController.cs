@@ -233,7 +233,7 @@ namespace FashionShop.Controllers
                     contentAdmin = contentAdmin.Replace("{{Address}}", order.Address);
                     contentAdmin = contentAdmin.Replace("{{ThanhTien}}", FashionShop.Models.common.Common.FormatNumber(thanhtien, 0));
                     contentAdmin = contentAdmin.Replace("{{TongTien}}", FashionShop.Models.common.Common.FormatNumber(tongtien, 0));
-                    FashionShop.Models.common.Common.SendMail("Sheepo", "Order #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["PasswordEmail"]);
+                    FashionShop.Models.common.Common.SendMail("Sheepo", "Order #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
                     code = new { Success = true, Code = 1 };
                     //return RedirectToAction("CheckOutSuccess");
@@ -278,7 +278,7 @@ namespace FashionShop.Controllers
                 item.TotalPrice = item.Quantity * item.Price;
                 cart.AddToCart(item, quantity);
                 Session["Cart"] = cart;
-                code = new { Success = true, msg = "Add product to cart successfully!", code = 1, Count = cart.items.Count };
+                code = new { Success = true, msg = "Thêm vào giỏ hàng thành công!", code = 1, Count = cart.items.Count };
             }
             return Json(code);
         }

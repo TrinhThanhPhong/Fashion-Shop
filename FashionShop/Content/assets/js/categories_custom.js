@@ -371,7 +371,7 @@ jQuery(document).ready(function($)
 		$( "#slider-range" ).slider(
 		{
 			range: true,
-			min: 0,
+			min: 1,
 			max: 100000000,
 			values: [min, max],
 			slide: function( event, ui )

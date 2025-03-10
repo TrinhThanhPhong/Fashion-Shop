@@ -25,7 +25,7 @@
     $('body').on('click', '.btnDelete', function (e) {
         e.preventDefault();
         var id = $(this).data('id');
-        var conf = confirm('Are you sure to delete this product from cart?');
+        var conf = confirm('Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?');
         if (conf == true) {
             $.ajax({
                 url: '/shoppingcart/Delete',
@@ -51,10 +51,15 @@
 
     $('body').on('click', '.btnDeleteAll', function (e) {
         e.preventDefault();
-        var conf = confirm('Are you sure to delete all products from cart?');
+        var conf = confirm('Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?');
         if (conf == true) {
             DeleteAll();
         }
+    });
+    $('body').on('click', '#btnDeleteAll', function (e) {
+        e.preventDefault();
+        DeleteAll();
+        $('#LogOffForm').submit();
     });
 });
 

@@ -13,10 +13,10 @@ namespace FashionShop.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Name cannot be blank")]
-        [StringLength(150, ErrorMessage = "Must not exceed 150 characters")]
+        [Required(ErrorMessage = "Tên không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được quá 150 kí tự")]
         public string Name { get; set; }
-        [StringLength(150, ErrorMessage = "Must not exceed 150 characters")]
+        [StringLength(150, ErrorMessage = "Không được quá 150 kí tự")]
         public string Email { get; set; }
         public string Website { get; set; }
         [StringLength(4000)]

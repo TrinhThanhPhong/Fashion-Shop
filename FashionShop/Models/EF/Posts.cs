@@ -15,7 +15,7 @@ namespace FashionShop.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Title cannot be blank!")]
+        [Required(ErrorMessage = "Tiêu đề không được để trống!")]
         [StringLength(150)]
         public string Title { get; set; }
 

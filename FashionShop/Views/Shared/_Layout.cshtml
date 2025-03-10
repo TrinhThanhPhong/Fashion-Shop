@@ -89,9 +89,8 @@
                                                 {
                                                     <li><a href="/Admin/RevenueStatistical/index">Admin</a></li>
                                                 }
-                                                <li><a href="/Account/Profile">Hồ sơ</a></li>
                                                 <li><a href="/Account/History">Lịch sử</a></li>
-                                                <li><a href="javascript: document.getElementById('LogOffForm').submit()">Đ.Xuất</a></li>
+                                                <li><a href="#" id="btnDeleteAll">Đ.Xuất</a></li>
                                             </ul>
                                         }
 
@@ -124,12 +123,16 @@
                                 @Html.Action("MenuTop", "Menu")
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    <li><a href="/Account/Profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                     <li class="checkout">
-                                        <a href="/cart">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            <span id="checkout_items" class="checkout_items">0</span>
-                                        </a>
+                                        @if (Request.IsAuthenticated)
+                                        {
+                                            <a href="/cart">
+                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                <span id="checkout_items" class="checkout_items">0</span>
+                                            </a>
+                                        }
+
                                     </li>
                                 </ul>
                                 <div class="hamburger_container">
@@ -260,8 +263,8 @@
                     </ul>
                 </div>
                 <div class="container" id="divChat" style="display: flex; justify-content: flex-end; padding-left: 0px; padding-right: 0px;">
-                    <input type="text" placeholder="Type message.." id="txtMessage" name="msg" style="width: 100%; font-size: 20px;" autocomplete="off"/>
-                    <button type="submit" class="btn btn-success" id="btnSend">Send</button>
+                    <input type="text" placeholder="Nhập tin nhắn..." id="txtMessage" name="msg" style="width: 100%; font-size: 20px;" autocomplete="off"/>
+                    <button type="submit" class="btn btn-success" id="btnSend">Gửi</button>
                 </div>
 
 

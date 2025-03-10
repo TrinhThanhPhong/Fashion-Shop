@@ -8,15 +8,15 @@ namespace FashionShop.Models
 {
     public class OrderViewModel
     {
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string CustomerName { get; set; }
 
 
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string Phone { get; set; }
 
 
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string Address { get; set; }
         public string Email { get; set; }
         public int TypePayment { get; set; }

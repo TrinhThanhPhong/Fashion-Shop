@@ -257,9 +257,9 @@ namespace FashionShop.Controllers
                 // Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                var EmailContent = "<h2 style='color: red;'>Sercurity warning!</h2>" +
-                    "<h3>We have just received a password reset request due to a forgotten password from Sheepo shop.</h3>" +
-                    "<span>Let us know it is you by <a href='" + callbackUrl + "'>click here to reset password</a>.</span>";
+                var EmailContent = "<h2 style='color: red;'>Cảnh báo bảo mật!</h2>" +
+                    "<h3>Chúng tôi vừa nhận được yêu cầu đặt lại mật khẩu từ trang web bán hàng Sheepo.</h3>" +
+                    "<span>Hãy cho chúng tôi biết đó là bạn bằng cách <a href='" + callbackUrl + "'>ấn vào link này để đặt lại mật khẩu</a>.</span>";
                 FashionShop.Models.common.Common.SendMail("Sheepo", "Forgot Password", EmailContent, model.Email);
                 // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");

@@ -19,11 +19,11 @@ namespace FashionShop.Models.EF
         public int Id { get; set; }
         [Required]
         public string Code { get; set; }
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string CustomerName { get; set; }
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string Phone { get; set; }
-        [Required(ErrorMessage = "Empty!!!")]
+        [Required(ErrorMessage = "Không được để trống!!!")]
         public string Address { get; set; }
         public string Email { get; set; }
         public decimal TotalAmount { get; set; }
