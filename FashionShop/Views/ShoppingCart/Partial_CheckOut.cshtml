@@ -23,19 +23,19 @@
         }
     </script>
     @Html.AntiForgeryToken()
-    <h3>Customer Information</h3>
+    <h3>Thông tin khách hàng</h3>
     if (!Request.IsAuthenticated)
     {
         <div class="form-group">
-            <label>Customer name</label>
+            <label>Tên khách hàng</label>
             <input type="text" name="CustomerName" required class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
-            <label>Phone number</label>
+            <label>Số điện thoại</label>
             <input type="text" name="Phone" class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
-            <label>Address</label>
+            <label>Địa chỉ</label>
             <input type="text" name="Address" class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
@@ -47,15 +47,15 @@
     {
         var user = (FashionShop.Models.ApplicationUser)ViewBag.User;
         <div class="form-group">
-            <label>Customer name</label>
+            <label>Tên khách hàng</label>
             <input type="text" name="CustomerName" value="@user.Fullname" class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
-            <label>Phone number</label>
+            <label>Số điện thoại</label>
             <input type="text" name="Phone" value="@user.Phone" class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
-            <label>Address</label>
+            <label>Địa chỉ</label>
             <input type="text" name="Address" class="form-control" autocomplete="off" />
         </div>
         <div class="form-group">
@@ -65,13 +65,13 @@
     }
 
     <div class="form-group">
-        <label>Payment method</label>
+        <label>Phương thức thanh toán</label>
         <select class="form-control" name="TypePayment">
             <option value="1" selected>COD</option>
-            <option value="2">Internet Banking</option>
+            <option value="2">/Chuyển khoản ngân hàng</option>
         </select>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-block btn-success">Order</button>
+        <button type="submit" class="btn btn-block btn-success">Đặt hàng</button>
     </div>
 }

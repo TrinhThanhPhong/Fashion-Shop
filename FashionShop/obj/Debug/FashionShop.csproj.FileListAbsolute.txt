@@ -465,3 +465,5 @@ D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditChangePa
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditChangePassword.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddBrandProduct.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditProductCategory.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProducts.resources
+C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProductsAgain.resources

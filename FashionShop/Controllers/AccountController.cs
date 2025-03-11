@@ -127,7 +127,7 @@ namespace FashionShop.Controllers
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Tài khoản mật khẩu không chính xác.");
                     return View(model);
             }
         }

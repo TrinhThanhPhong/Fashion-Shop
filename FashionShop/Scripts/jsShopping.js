@@ -3,9 +3,10 @@
     $('body').on('click', '.btnAddToCart', function (e) {
         e.preventDefault();
         var id = $(this).data('id');
-        var quantity = 1;
-        var tQuantity = $('#quantity_value').text();
         var Size = $('input[name="selectSize"]:checked').val();
+        var quantity = 0;
+        const quantityValue = document.getElementById("quantity_value");
+        var tQuantity = $('#quantity_value').text();
         if (tQuantity != '') {
             quantity = parseInt(tQuantity);
         }
@@ -20,6 +21,7 @@
                 }
             }
         });
+        quantityValue.textContent = 0;
     });
 
     $('body').on('click', '.btnDelete', function (e) {

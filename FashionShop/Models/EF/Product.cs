@@ -21,40 +21,45 @@ namespace FashionShop.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên sản phẩm")]
         [StringLength(250)]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập loại sản phẩm")]
         public string ProductType { get; set; }
         [StringLength(250)]
         public string Alias { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập mã sản phẩm")]
         [StringLength(50)]
         public string ProductCode { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập thương hiệu sản phẩm")]
         public string ProductBrand { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeXS { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeS { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeM { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeL { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeXL { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeXXL { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng sản phẩm")]
         public int SizeXXXL { get; set; }
         public string Description { get; set; }
         [AllowHtml]
         public string Detail { get; set; }
         [StringLength(250)]
         public string Image { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá gốc sản phẩm")]
         public decimal OriginalPrice { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá sản phẩm")]
         public decimal Price { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá khuyến mãi sản phẩm")]
         public decimal PriceSale { get; set; }
         public int Quantity { get; set; }
         public int ViewCount { get; set; }

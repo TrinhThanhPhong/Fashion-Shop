@@ -4,7 +4,8 @@ from preprocessing import load_data_and_build_vocab, preprocess_text, tokenize
 from train import predict_intent, get_response
 from getProducts import get_products
 from get_info import get_in4
-from utils import extract_product_code
+from get_code import get_cfb
+from utils import extract_product_code, extract_brand_from_input
 json_path = 'data.json'
 data, vocab, intent_labels, label_to_intent, train_data = load_data_and_build_vocab(json_path)
 input_size = len(vocab)  # Đảm bảo rằng vocab đã được định nghĩa đúng
@@ -63,6 +64,15 @@ def chat(msg):
             for code in product_codes:
                 response += get_in4(code)
             return response
+    elif intent_tag == "hỏi mã theo brand":
+        # brand = msg.split("brand")[-1].strip()  # Lấy phần thương hiệu sau từ khóa "brand" (có thể cần điều chỉnh thêm)
+        # response = get_cfb(brand)
+        # return response
+        brand = extract_brand_from_input(msg)  # Hàm xử lý lấy thương hiệu từ câu hỏi
+        if brand:
+            return get_cfb(brand)
+        else: 
+            return "Xin lỗi, không tìm thấy thương hiệu của bạn!"
     response = get_response(intent_tag)
     return response
 

@@ -257,6 +257,7 @@ namespace FashionShop.Controllers
                 {
                     cart = new ShoppingCart();
                 }
+
                 ShoppingCartItem item = new ShoppingCartItem
                 {
                     ProductId = checkProduct.Id,
@@ -276,6 +277,52 @@ namespace FashionShop.Controllers
                     item.Price = (decimal)checkProduct.PriceSale;
                 }
                 item.TotalPrice = item.Quantity * item.Price;
+                //------------------------------------Moi nhat------------------------------------------------------
+                var ItemHientai = cart.items.FirstOrDefault(x => x.ProductId == id && x.Size == size);
+                int QuantityinCart = ItemHientai != null ? ItemHientai.Quantity : 0;
+
+                int trongkho = 0;
+                if (size == "S")
+                {
+                    trongkho = checkProduct.SizeS;
+                }
+                if (size == "M")
+                {
+                    trongkho = checkProduct.SizeM;
+                }
+                if (size == "L")
+                {
+                    trongkho = checkProduct.SizeL;
+                }
+                if (size == "XL")
+                {
+                    trongkho = checkProduct.SizeXL;
+                }
+                if (size == "XXL")
+                {
+                    trongkho = checkProduct.SizeXXL;
+                }
+                if (size == "XXXL")
+                {
+                    trongkho = checkProduct.SizeXXXL;
+                }
+                if (size == "XS")
+                {
+                    trongkho = checkProduct.SizeXS;
+                }
+
+                if (quantity == 0)
+                {
+                    code = new { Success = false, msg = "", code = -1, Count = cart.items.Count };
+                    return Json(code);
+                }
+
+                if (QuantityinCart + quantity > trongkho)
+                {
+                    code = new { Success = true, msg = "Tổng số lượng sản phẩm trong giỏ hàng và số lượng bạn muốn thêm đã nhiều hơn số lượng trong kho chúng tôi có!", code = 1, Count = cart.items.Count };
+                    return Json(code);
+                }
+                //-----------------------------------------------------------------------------------------------
                 cart.AddToCart(item, quantity);
                 Session["Cart"] = cart;
                 code = new { Success = true, msg = "Thêm vào giỏ hàng thành công!", code = 1, Count = cart.items.Count };

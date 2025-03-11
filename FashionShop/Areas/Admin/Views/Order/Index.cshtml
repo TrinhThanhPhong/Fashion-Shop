@@ -55,7 +55,24 @@
                                 <td>@item.CustomerName</td>
                                 <td>@item.Phone</td>
                                 <td>@FashionShop.Models.common.Common.FormatNumber(item.TotalAmount, 0)</td>
-                                <td>@(item.TypePayment == 1? "Chờ thanh toán": "Đã thanh toán")</td>
+                                <td>
+                                    @{
+                                        string paymentStatus = "";
+                                        if (item.TypePayment == 1)
+                                        {
+                                            paymentStatus = "Chờ thanh toán";
+                                        }
+                                        if (item.TypePayment == 2)
+                                        {
+                                            paymentStatus = "Đã thanh toán";
+                                        }
+                                        if (item.TypePayment == 3)
+                                        {
+                                            paymentStatus = "Hủy đơn";
+                                        }
+                                    }
+                                    @paymentStatus
+                                </td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>
                                     <a href="/Admin/Order/View/@item.Id" class="btn btn-sm btn-success">Xem chi tiết</a>
@@ -102,6 +119,7 @@
                 <div class="form-group">
                     <label>Tình trạng</label>
                     <select class="form-control" id="ddStatus">
+                        <option value="3">Hủy đơn</option>
                         <option value="2">Đã thanh toán</option>
                         <option value="1">Chờ thanh toán</option>
                     </select>

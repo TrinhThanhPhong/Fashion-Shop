@@ -29,8 +29,8 @@ namespace FashionShop.Areas.Admin.Controllers
                         select new { 
                             CreatedDate = o.CreatedDate,
                             Quantity = od.Quantity,
-                            Price = od.Price,
-                            OriginalPrice = p.OriginalPrice
+                            Price = (o.TypePayment != 3) ? od.Price : 0,
+                            OriginalPrice = (o.TypePayment != 3) ? p.OriginalPrice : 0
                         };
             try
             {

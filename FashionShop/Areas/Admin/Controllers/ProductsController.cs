@@ -110,6 +110,7 @@ namespace FashionShop.Areas.Admin.Controllers
                     item.Detail = model.Detail;
                     item.Price = model.Price;
                     item.PriceSale = model.PriceSale;
+                    item.OriginalPrice = model.OriginalPrice;
                     item.IsActive = model.IsActive;
                     item.IsHome = model.IsHome;
                     item.IsSale = model.IsSale;

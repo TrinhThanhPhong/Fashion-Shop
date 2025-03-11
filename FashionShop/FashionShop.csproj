@@ -379,6 +379,14 @@
     <Compile Include="Migrations\202503071630027_EditProductCategory.designer.cs">
       <DependentUpon>202503071630027_EditProductCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503110915588_UpdateRequiredProducts.cs" />
+    <Compile Include="Migrations\202503110915588_UpdateRequiredProducts.designer.cs">
+      <DependentUpon>202503110915588_UpdateRequiredProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503110916583_UpdateRequiredProductsAgain.cs" />
+    <Compile Include="Migrations\202503110916583_UpdateRequiredProductsAgain.designer.cs">
+      <DependentUpon>202503110916583_UpdateRequiredProductsAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3883,6 +3891,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503071630027_EditProductCategory.resx">
       <DependentUpon>202503071630027_EditProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503110915588_UpdateRequiredProducts.resx">
+      <DependentUpon>202503110915588_UpdateRequiredProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503110916583_UpdateRequiredProductsAgain.resx">
+      <DependentUpon>202503110916583_UpdateRequiredProductsAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

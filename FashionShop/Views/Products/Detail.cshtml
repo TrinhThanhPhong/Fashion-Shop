@@ -251,12 +251,22 @@
             const plusBtn = document.querySelector(".plus");
             const quantityValue = document.getElementById("quantity_value");
             let maxValue = 1;
+            const AddtoCartBtn = document.querySelector(".btnAddToCart");
 
             function updateMaxValue() {
                 const selectedSize = document.querySelector('input[name="selectSize"]:checked');
                 if (selectedSize) {
                     maxValue = parseInt(selectedSize.getAttribute("data-max"));
-                    quantityValue.textContent = 1;
+                    quantityValue.textContent = 0;
+                    if (maxValue === 0) {
+                        AddtoCartBtn.textContent = "Đã hết hàng";
+                        AddtoCartBtn.classList.add("disabled");
+                        AddtoCartBtn.style.pointerEvents = "none";
+                    } else {
+                        AddtoCartBtn.textContent = "Thêm vào giỏ hàng";
+                        AddtoCartBtn.classList.remove("disabled");
+                        AddtoCartBtn.style.pointerEvents = "auto";
+                    }
                 }
             }
 
@@ -264,23 +274,35 @@
                 size.addEventListener("change", updateMaxValue);
             });
 
+            function updateButtonState() {
+                if (parseInt(quantityValue.textContent) === 0) {
+                    AddtoCartBtn.classList.add("disabled");
+                    AddtoCartBtn.style.pointerEvents = "none";
+                } else {
+                    AddtoCartBtn.classList.remove("disabled");
+                    AddtoCartBtn.style.pointerEvents = "auto";
+                }
+            }
             
             plusBtn.addEventListener("click", function () {
                 let currentValue = parseInt(quantityValue.textContent);
                 console.log("Current:", currentValue, "Max:", maxValue);
                 if (currentValue < maxValue) {
                     quantityValue.textContent = currentValue + 1;
+                    updateButtonState();
                 }
             });
 
             minusBtn.addEventListener("click", function () {
                 let currentValue = parseInt(quantityValue.textContent);
-                if (currentValue > 1) {
+                if (currentValue > 0) {
                     quantityValue.textContent = currentValue - 1;
+                    updateButtonState();
                 }
             });
         });
 
+        updateButtonState();
     </script>
 
     <script src="~/Content/assets/js/single_custom.js"></script>

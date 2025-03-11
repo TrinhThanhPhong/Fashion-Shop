@@ -11,7 +11,6 @@ def create_connection():
     
     try:
         conn = pyodbc.connect(conn_str)
-        # print("Kết nối SQL Server thành công!")
         return conn
     except Exception as e:
         print("Lỗi kết nối:", e)
@@ -58,20 +57,19 @@ def check(conn):
 #     except Exception as e:
 #         print("Lỗi khi truy vấn tổng số lượng theo thương hiệu:", e)
 def get_in4Product_byCode(code):
-    '''
-    Lấy thông tin sản phẩm theo mã sản phẩm (code), bao gồm tên, giá và số lượng.
-    '''
+    
     query = """
-    SELECT Title, Quantity, Price 
+    SELECT Title, Quantity, Price
     FROM dbo.Tb_Product
-    WHERE ProductCode = ? 
+    WHERE ProductCode = ?
     """
+
     try:
         conn = create_connection()
         if conn:
             cursor = conn.cursor()
-            cursor.execute(query, (code,))  # Truyền tham số (code) vào câu truy vấn
-            row = cursor.fetchone()  # Lấy 1 dòng dữ liệu đầu tiên
+            cursor.execute(query, (code,))
+            row = cursor.fetchone()
 
             if row:
                 product_in4 = {
@@ -90,12 +88,37 @@ def get_in4Product_byCode(code):
         print(f"Lỗi khi truy vấn sản phẩm theo mã {code}: {e}")
         return None
 
+def get_code(brand):
+    brand = brand.lower()
+
+    query = """
+    SELECT ProductCode
+    FROM dbo.Tb_Product
+    WHERE LOWER(ProductBrand) = ?
+    """
+
+    try:
+        conn = create_connection()
+        if conn:
+            cursor = conn.cursor()
+            cursor.execute(query, (brand,))
+            rows = cursor.fetchall()
+
+            if rows:
+                product_codes = [row[0] for row in rows]
+                return product_codes
+            else:
+                print(f"Không tìm thấy sản phẩm cho thương hiệu {brand.capitalize()}.")
+                return None
+        else:
+            print("Không thể kết nối đến với cơ sở dữ liệu!")
+            return None
+    except Exception as e:
+        print(f"Lỗi khi truy vấn mã sản phẩm cho thương hiệu {brand}: {e}")
+        return None
+
 
 def get_total_by_brand_and_type(conn):
-    """
-    Hàm hiển thị ra tổng số Quantity cho mỗi (ProductType, ProductBrand).
-    """
-
     query = """
     SELECT 
         ProductType,
@@ -103,8 +126,8 @@ def get_total_by_brand_and_type(conn):
         SUM(Quantity) AS TotalQuantity
     FROM dbo.Tb_Product
     GROUP BY ProductType, ProductBrand
-
     """
+
     try:
         cursor = conn.cursor()
         cursor.execute(query)
@@ -116,22 +139,12 @@ def get_total_by_brand_and_type(conn):
                     }
         if rows:
             for row in rows:
-                # Chú ý: Tùy thứ tự cột SELECT, row[0] = ProductType, row[1] = ProductBrand, row[2] = TotalQuantity
-                '''
-                list _information = {
-                                        'product_type': [row[0]],
-                                        'product_brand': [row[1]],
-                                        'total_qty': [row[2]]
-                                    }
-                '''
                 product_type = row[0]
                 lst_prod["Kiểu quần áo"].append(product_type)
                 product_brand = row[1]
                 lst_prod["Hãng sản phẩm"].append(product_brand)
                 total_qty = row[2]
                 lst_prod["Số lượng còn lại"].append(total_qty)
-                # print(f"{product_type} - {product_brand}: {total_qty}")
-            # print(lst_prod)
             return(lst_prod)
         else:
             print("Không có dữ liệu khi tính tổng.")
@@ -157,10 +170,40 @@ def get_in4code(code):
         return df
         conn.close()
 
+# def get_code_from_brand(brand):
+#     conn = create_connection()
+#     if conn:
+#         df = get_code(brand)
+#         df = pd.DataFrame(df)
+#         return df
+#         conn.close()
+
+def get_brand_info(brand):
+    conn = create_connection()
+    query = f"""
+        SELECT ProductBrand, ProductCode, Price
+        FROM dbo.Tb_Product
+        WHERE ProductBrand = ?
+    """
+
+    # Thực thi query và đưa kết quả vào DataFrame
+    df = pd.read_sql(query, conn, params=[brand])
+
+    # Đóng kết nối
+    conn.close()
+
+    if df.empty:
+        return None  # Không tìm thấy brand
+
+    return df  # Trả về DataFrame chứa thông tin thương hiệu
 # Ví dụ sử dụng
 
 # if __name__ == "__main__":
-#     product_in4 = get_in4Product_byCode("A002")
-#     if product_in4:
-#         print(product_in4)
-    
+    # product_in4 = get_in4Product_byCode("A002")
+    # if product_in4:
+    #     print(product_in4)
+
+    # brand_name = input("Nhập tên thương hiệu (Gucci hoặc Balenciaga): ")
+    # product_codes = get_code(brand_name)
+    # if product_codes:
+    #     print(f"Mã sản phẩm cho thương hiệu {brand_name.capitalize()}: {product_codes}")

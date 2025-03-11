@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Check Out";
+    ViewBag.Title = "Thanh toán";
 }
 
 <style>
@@ -18,8 +18,8 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Cart</a></li>
+                    <li><a href="/Home">Trang chủ</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Thanh toán</a></li>
                 </ul>
             </div>
 
@@ -27,8 +27,8 @@
 
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1>Payment</h1>
-                    <p>Please check your order again!</p>
+                    <h1>Thanh toán</h1>
+                    <p>Vui lòng kiểm tra lại đơn hàng!</p>
                 </div>
             </div>
             <hr />
@@ -47,7 +47,7 @@
             else
             {
                 <div>
-                    Product not found. Let's <a href="/products">back</a> to buy somethings!
+                    Không tìm thấy sản phẩm. Hãy <a href="/products">quay lại</a> để mua hàng!
                 </div>
             }
         </div>
@@ -80,10 +80,10 @@
                     }
                 },
                 messages: {
-                    'CustomerName': 'Empty!!!',
-                    'Phone': 'Empty!!!',
-                    'Address': 'Empty!!!',
-                    'Email': 'Value invalid!!!'
+                    'CustomerName': 'Không được để trống!!!',
+                    'Phone': 'Không được để trống!!!',
+                    'Address': 'Không được để trống!!!',
+                    'Email': 'Email không đúng định dạng!!!'
                 }
             });
         });
