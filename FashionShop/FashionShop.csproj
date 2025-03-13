@@ -387,6 +387,10 @@
     <Compile Include="Migrations\202503110916583_UpdateRequiredProductsAgain.designer.cs">
       <DependentUpon>202503110916583_UpdateRequiredProductsAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503130924025_RequiredImageProduct2.cs" />
+    <Compile Include="Migrations\202503130924025_RequiredImageProduct2.designer.cs">
+      <DependentUpon>202503130924025_RequiredImageProduct2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -494,6 +498,7 @@
     <Content Include="Content\assets\images\product_7.png" />
     <Content Include="Content\assets\images\product_8.png" />
     <Content Include="Content\assets\images\product_9.png" />
+    <Content Include="Content\assets\images\No_Image.png" />
     <Content Include="Content\assets\images\single_1.jpg" />
     <Content Include="Content\assets\images\single_1_thumb.jpg" />
     <Content Include="Content\assets\images\single_2.jpg" />
@@ -3897,6 +3902,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503110916583_UpdateRequiredProductsAgain.resx">
       <DependentUpon>202503110916583_UpdateRequiredProductsAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503130924025_RequiredImageProduct2.resx">
+      <DependentUpon>202503130924025_RequiredImageProduct2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

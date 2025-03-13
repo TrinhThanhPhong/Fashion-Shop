@@ -54,6 +54,8 @@ namespace FashionShop.Models.EF
         [AllowHtml]
         public string Detail { get; set; }
         [StringLength(250)]
+
+        //[Required(ErrorMessage = "Vui lòng thêm ảnh sản phẩm")]
         public string Image { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập giá gốc sản phẩm")]
         public decimal OriginalPrice { get; set; }
@@ -69,6 +71,7 @@ namespace FashionShop.Models.EF
         public bool IsHot { get; set; }
         public bool IsActive { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng chọn danh mục sản phẩm")]
         public int ProductCategoryId { get; set; }
         [StringLength(250)]
         public string SeoTitle { get; set; }

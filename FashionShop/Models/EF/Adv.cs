@@ -13,7 +13,7 @@ namespace FashionShop.Models.EF
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tiêu đề")]
         [StringLength(150)]
         public string Title { get; set; }
         [StringLength(150)]
