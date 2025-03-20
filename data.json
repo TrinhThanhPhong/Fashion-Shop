@@ -8,7 +8,10 @@
           "hello",
           "hii",
           "hiii",
-          "Chào"
+          "Chào",
+          "chào shop",
+          "Có ai ở đây không?",
+          "Có ai để trò chuyện ngay bây giờ không???"
         ],
         "responses":[
           "Chào thượng đế, em là trợ lý của Sheepo. Em có thể giúp gì cho anh/chị?",
@@ -205,8 +208,8 @@
           "áo thun đen có cỡ gì?"
         ],
         "responses":[
-          "Anh/chị vui lòng click vào PRODUCTS để xem chi tiết ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!",
-          "Để xem giá và chi tiết về mặt hàng. Anh/chị vui lòng click vào PRODUCTS ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!"
+          "Anh/chị vui lòng click vào SẢN PHẨM để xem chi tiết ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!",
+          "Để xem giá và chi tiết về mặt hàng. Anh/chị vui lòng click vào SẢN PHẨM ạ! \n Hoặc anh/chị có thể cung cấp giúp em mã sản phẩm, em sẽ đưa ra giá ạ!"
         ]
       },
       {

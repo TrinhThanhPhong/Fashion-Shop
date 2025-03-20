@@ -86,4 +86,13 @@ def get_response(intent_tag):
 #     # Lấy phản hồi
 #     response = get_response(intent_tag)
 #     print("Chatbot:", response)
+
+
+# torch.save(model.state_dict(), "Nino.pth")
+import pickle
+
+# Sau khi huấn luyện mô hình
 torch.save(model.state_dict(), "Nino.pth")
+# Lưu vocab
+with open("vocab.pkl", "wb") as f:
+    pickle.dump(vocab, f)
