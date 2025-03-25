@@ -203,6 +203,7 @@ namespace FashionShop.Controllers
                     {
                         strProducts += "<tr>";
                         strProducts += "<td>" + sp.ProductName + "</td>";
+                        strProducts += "<td>" + sp.Size + "</td>";
                         strProducts += "<td>" + sp.Quantity + "</td>";
                         strProducts += "<td>" + FashionShop.Models.common.Common.FormatNumber(sp.TotalPrice, 0) + "</td>";
                         strProducts += "</tr>";

@@ -6,6 +6,7 @@
         <th>STT</th>
         <th>Ảnh</th>
         <th>Tên sản phẩm</th>
+        <th>Kích cỡ</th>
         <th>Danh mục</th>
         <th>Giá</th>
         <th style="width: 100px;">Số lượng</th>
@@ -25,6 +26,7 @@
     <td>@(i + 1)</td>
     <td><a href="/detail-product/@item.Alias-p@(item.ProductId)"><img src="@item.ProductImg" width="60" /></a></td>
     <td><a href="/detail-product/@item.Alias-p@(item.ProductId)">@(item.ProductName.Length > 50 ? item.ProductName.Substring(0, 50) + "..." : item.ProductName)</a></td>
+    <td>@item.Size</td>
     <td>@item.CategoryName</td>
     <td>@Common.FormatNumber(item.Price, 0)</td>
     <td>@item.Quantity</td>

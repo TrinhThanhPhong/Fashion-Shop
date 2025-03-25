@@ -467,3 +467,7 @@ C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddBrandP
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditProductCategory.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProducts.resources
 C:\Users\Tam\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProductsAgain.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.AddBrandProduct.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.EditProductCategory.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProducts.resources
+D:\Github\Fashion-Shop\FashionShop\obj\Debug\FashionShop.Migrations.UpdateRequiredProductsAgain.resources

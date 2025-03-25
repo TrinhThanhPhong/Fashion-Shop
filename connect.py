@@ -4,7 +4,7 @@ def create_connection():
     conn_str = (
         "DRIVER={ODBC Driver 17 for SQL Server};"
         # Quang chạy thì nhớ đổi tên SERVER tương ứng máy em nhé
-        "SERVER=DESKTOP-B1JGQ9E;"  
+        "SERVER=LAPTOP-TG0HIKL6\ADMIN;"  
         "DATABASE=FashionShop;"
         "Trusted_Connection=yes;"             
     )

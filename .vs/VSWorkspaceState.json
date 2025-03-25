@@ -10,8 +10,9 @@
     "\\FashionShop\\Scripts",
     "\\FashionShop\\Views",
     "\\FashionShop\\Views\\Contact",
-    "\\FashionShop\\Views\\Products"
+    "\\FashionShop\\Views\\Products",
+    "\\FashionShop\\Views\\Shared"
   ],
-  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Controllers\\ProductsController.cs",
+  "SelectedNode": "\\FashionShop\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

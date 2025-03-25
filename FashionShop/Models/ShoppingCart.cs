@@ -16,7 +16,7 @@ namespace FashionShop.Models.common
 
         public void AddToCart(ShoppingCartItem item, int Quantity)
         {
-            var checkExits = items.FirstOrDefault(x => x.ProductId == item.ProductId);
+            var checkExits = items.FirstOrDefault(x => x.ProductId == item.ProductId && x.Size == item.Size);
             if(checkExits != null)
             {
                 checkExits.Quantity += Quantity;
