@@ -45,26 +45,28 @@ namespace FashionShop.Areas.Admin.Controllers
             {
                 if(Images != null && Images.Count > 0)
                 {
-                    for(int i = 0; i < Images.Count; i++)
+                    int defaultIndex = (rdDefault != null && rdDefault.Count > 0) ? rdDefault[0] - 1 : 0;
+                    for (int i = 0; i < Images.Count; i++)
                     {
-                        if(i + 1 == rdDefault[0])
+                        model.ProductImage.Add(new ProductImage
                         {
-                            model.ProductImage.Add(new ProductImage 
-                            { 
-                                ProductId = model.Id,
-                                Image = Images[i],
-                                IsDefault = true
-                            });
-                        }else
-                        {
-                            model.ProductImage.Add(new ProductImage
-                            {
-                                ProductId = model.Id,
-                                Image = Images[i],
-                                IsDefault = false
-                            });
-                        }
+                            ProductId = model.Id,
+                            Image = Images[i],
+                            IsDefault = (i == defaultIndex)
+                        });
                     }
+                }
+                else
+                {
+                    model.ProductImage = new List<ProductImage>
+                    {
+                        new ProductImage
+                        {
+                            ProductId = model.Id,
+                            Image = Url.Content("~/Content/assets/images/No_Image.png"),
+                            IsDefault = true
+                        }
+                    };
                 }
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;

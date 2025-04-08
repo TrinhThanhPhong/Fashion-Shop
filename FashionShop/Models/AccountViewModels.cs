@@ -63,26 +63,29 @@ namespace FashionShop.Models
 
     public class CreateAccountViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên đăng nhập")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên khách hàng")]
         public string FullName { get; set; }
 
         public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng chọn quyền cho tài khoản này")]
         public string Role { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Vui lòng nhập Email")]
+        [EmailAddress(ErrorMessage = "Email không đúng định dạng")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [StringLength(100, ErrorMessage = "{0} phải bao gồm {2} kí tự.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
         [DataType(DataType.Password)]
         [Display(Name = "Xác nhận mật khẩu")]
         [Compare("Password", ErrorMessage = "Mật khẩu không trùng khớp.")]
@@ -91,21 +94,22 @@ namespace FashionShop.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên đăng nhập")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập họ và tên")]
         public string FullName { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
         public string Phone { get; set; }
         public string Role { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập Email")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [StringLength(100, ErrorMessage = "{0} phải bao gồm {2} kí tự.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]

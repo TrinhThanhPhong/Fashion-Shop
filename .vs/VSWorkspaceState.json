@@ -2,9 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\FashionShop",
-    "\\FashionShop\\Areas",
-    "\\FashionShop\\Areas\\Admin",
-    "\\FashionShop\\Areas\\Admin\\Controllers",
+    "\\FashionShop\\Controllers",
     "\\FashionShop\\Models",
     "\\FashionShop\\Models\\EF",
     "\\FashionShop\\Scripts",
@@ -13,6 +11,6 @@
     "\\FashionShop\\Views\\Products",
     "\\FashionShop\\Views\\Shared"
   ],
-  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Controllers\\RevenueStatisticalController.cs",
+  "SelectedNode": "\\FashionShop\\Controllers\\ContactController.cs",
   "PreviewInSolutionExplorer": false
 }

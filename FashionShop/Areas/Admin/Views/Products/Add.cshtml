@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Danh mục sản phẩm</label>
-                                            @Html.DropDownListFor(x => x.ProductCategoryId, ViewBag.ProductCategory as SelectList, "-Chọn danh mục sản phẩm-", new { @class = "form-control", @placeholder = "Chi tiết" })
+                                            @Html.DropDownListFor(x => x.ProductCategoryId, ViewBag.ProductCategory as SelectList, "-Chọn danh mục sản phẩm-", new { @class = "form-control", @placeholder = "Danh mục sản phẩm" })
                                             @Html.ValidationMessageFor(x => x.ProductCategoryId, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
@@ -344,7 +344,7 @@
                 str += `<tr id="trow_${currentId}">
                     <td class="text-center">${currentId}</td>
                     <td class="text-center"><img width="80" src="${url}"><input type="hidden" value="${url}" name="Images"/></td>
-                    <td class="text-center"><input type="radio" name="rdDefault" value="${currentId}" ckecked="checked"/></td>
+                    <td class="text-center"><input type="radio" name="rdDefault" value="${currentId}" checked="checked"/></td>
                     <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnDeleteImage">Xóa</a></td>
                   </tr>`;
             } else {
