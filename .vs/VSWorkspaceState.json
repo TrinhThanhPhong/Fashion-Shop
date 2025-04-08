@@ -13,6 +13,6 @@
     "\\FashionShop\\Views\\Products",
     "\\FashionShop\\Views\\Shared"
   ],
-  "SelectedNode": "\\FashionShop\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\FashionShop\\Areas\\Admin\\Controllers\\RevenueStatisticalController.cs",
   "PreviewInSolutionExplorer": false
 }
