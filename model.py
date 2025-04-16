@@ -16,9 +16,9 @@ import torch.nn as nn
 #         output = self.fc(hidden)
 #         return output
 
-class IntentClassifierBiLSTM(nn.Module):
+class IntentClassifier(nn.Module):
     def __init__(self, input_size, hidden_size, embedding_dim, num_classes, dropout_prob=0.5):
-        super(IntentClassifierBiLSTM, self).__init__()
+        super(IntentClassifier, self).__init__()
         self.embedding = nn.Embedding(input_size, embedding_dim)
         self.rnn = nn.LSTM(embedding_dim, hidden_size, batch_first=True, bidirectional=True)
         self.dropout = nn.Dropout(dropout_prob)  # Lớp Dropout để giảm overfitting
