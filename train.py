@@ -4,7 +4,7 @@ import torch.optim as optim
 import random
 from preprocessing import load_data_and_build_vocab, preprocess_text, tokenize
 from model import IntentClassifier
-
+import torch.nn.functional as F
 #Đọc data và xây dựng vocab
 json_path = 'data.json'
 data, vocab, intent_labels, label_to_intent, train_data = load_data_and_build_vocab(json_path)
@@ -52,20 +52,24 @@ for epoch in range(epochs):
     # print(f'Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}')
 
 #Hàm dự đoán intent
-def predict_intent(sentence):
+def predict_intent(sentence, threshold=0.4):
     if not sentence:
-        return 
+        return None
+
     model.eval()
     sentence_processed = preprocess_text(sentence)
-    indices = [vocab.word2idx.get(w, vocab.word2idx['<unk>'])
-               for w in tokenize(sentence_processed)]
+    indices = [vocab.word2idx.get(w, vocab.word2idx['<unk>']) for w in tokenize(sentence_processed)]
     sentence_tensor = torch.tensor(indices, dtype=torch.long).unsqueeze(0).to(device)
 
     with torch.no_grad():
-        output = model(sentence_tensor)
-        predicted_label = torch.argmax(output, dim=1).item()
+        output = model(sentence_tensor)  # output shape: [1, num_classes]
+        probs = F.softmax(output, dim=1)  # Chuyển logits thành xác suất
+        confidence, predicted_label = torch.max(probs, dim=1)
+        print(confidence.item())
+        if confidence.item() < threshold:
+            return None  # Không đủ tự tin để trả lời
 
-    intent_tag = label_to_intent[predicted_label]
+    intent_tag = label_to_intent[predicted_label.item()]
     return intent_tag
 
 #Hàm lấy phản hồi ngẫu nhiên
