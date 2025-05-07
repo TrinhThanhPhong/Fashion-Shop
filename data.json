@@ -293,6 +293,24 @@
       "responses": [
         "Giao hàng tiêu chuẩn thì sẽ mất khoảng 3-5 ngày anh/chị sẽ nhận được hàng ạ. Nếu cần gấp, anh/chị có thể liên hệ qua hotline 0388454656 (8h30 - 22h)!"
       ]
+    },
+    {
+      "tag": "hỗ trợ",
+      "patterns": [
+        "Tôi gặp vấn đề với đơn hàng, tôi cần hỗ trợ như thế nào?",
+        "Làm sao để đổi trả sản phẩm?",
+        "Sản phẩm tôi nhận bị lỗi, tôi có thể đổi trả không?",
+        "Tôi muốn yêu cầu hoàn tiền, có thể làm thế nào?",
+        "Tôi muốn hoàn tiền sản phẩm",
+        "Sản phẩm của tôi bị lỗi",
+        "Đơn hàng không đúng",
+        "Sản phẩm của tôi gặp lỗi, tôi cần hoàn tiền"
+      ],
+      "responses": [
+        "Nếu bạn gặp vấn đề với sản phẩm, vui lòng liên hệ với bộ phận hỗ trợ khách hàng của chúng tôi qua email hoặc số điện thoại.",
+        "Chúng tôi có chính sách đổi trả trong vòng 7 ngày kể từ ngày nhận hàng. Bạn chỉ cần cung cấp mã đơn hàng và tình trạng sản phẩm để được hỗ trợ.",
+        "Chúng tôi sẽ hỗ trợ bạn đổi sản phẩm nếu sản phẩm bị lỗi. Vui lòng liên hệ với chúng tôi để được hướng dẫn chi tiết."
+      ]
     }
   ]
 }
