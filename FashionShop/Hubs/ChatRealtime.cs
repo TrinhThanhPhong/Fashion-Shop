@@ -20,7 +20,8 @@ namespace FashionShop.Hubs
             Clients.All.message(name, message);
 
             string aiResponse = await GetRasaResponse(message);
-            Clients.All.message("Bot", aiResponse);
+            // Clients.All.message("Bot", aiResponse);
+            Clients.Caller.message("Bot", aiResponse);
         }
 
         private async Task<string> GetRasaResponse(string userMessage)
@@ -40,7 +41,8 @@ namespace FashionShop.Hubs
         }
         public void Hello()
         {
-            Clients.All.hello();
+            // Clients.All.hello();
+            Clients.Caller.hello();
         }
 
         public void Connect(string name)
